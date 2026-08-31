@@ -170,7 +170,7 @@ giscus:
 # Optional: Set default categories and tags for posts from each source.
 external_sources:
   - name: myrpnions
-    rss_url: https://myrpnions.substacks.com/feed
+    rss_url: https://myrpnions.substack.com/feed
     categories: [external-posts]
     tags: [substack]
 
