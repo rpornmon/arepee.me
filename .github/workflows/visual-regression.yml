@@ -1,5 +1,8 @@
 name: Visual regression checks
 
+permissions:
+  contents: read
+
 on:
   pull_request:
     branches: [main, master, v1.0-dev]
