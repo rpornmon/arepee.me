@@ -187,15 +187,18 @@ bundle exec jekyll serve --port 5000
 
 ### Theme colors not applying
 
-**Problem:** You changed `_config.yml` color settings but nothing changed.
+**Problem:** You added a `custom_themes` file (or changed theme colors) but nothing changed.
 
 **Solution:**
 
-1. Check your color name is valid in `_sass/_variables.scss`
-2. Clear browser cache (see above)
-3. Rebuild: `docker compose up --build` (Docker) or `bundle exec jekyll build` (Ruby)
-4. Wait for GitHub Actions to complete
-5. Visit the site in a private/incognito window
+1. In `v1.x`, `custom_themes` is not a recognized file name. Use exact override paths in your **site repo**:
+   - `_sass/_themes.scss`
+   - `_sass/_variables.scss`
+2. Keep `theme: al_folio_core` in `_config.yml` so gem-owned theme runtime still loads.
+3. Clear browser cache (see above)
+4. Rebuild: `docker compose up --build` (Docker) or `bundle exec jekyll build` (Ruby)
+5. Wait for GitHub Actions to complete
+6. Visit the site in a private/incognito window
 
 ---
 
