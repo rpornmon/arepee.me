@@ -17,6 +17,7 @@ Here are some frequently asked questions. If you have a different question, plea
   - [After I update my site with some new content, even a small change, the GitHub action throws an error or displays a warning. What happened?](#after-i-update-my-site-with-some-new-content-even-a-small-change-the-github-action-throws-an-error-or-displays-a-warning-what-happened)
   - [How do I upgrade from al-folio v1.0 to v1.1+ with minimal friction?](#how-do-i-upgrade-from-al-folio-v10-to-v11-with-minimal-friction)
   - [Do I need to fork every v1 gem to customize layouts and Liquid files?](#do-i-need-to-fork-every-v1-gem-to-customize-layouts-and-liquid-files)
+  - [Why does my website not override the new theme?](#why-does-my-website-not-override-the-new-theme)
   - [How do I know when a local override is stale after a plugin update?](#how-do-i-know-when-a-local-override-is-stale-after-a-plugin-update)
   - [Why does v1.x starter not have npm run build:css anymore?](#why-does-v1x-starter-not-have-npm-run-buildcss-anymore)
   - [Jupyter posts are enabled, but my build says jupyter-nbconvert is missing. What are my options?](#jupyter-posts-are-enabled-but-my-build-says-jupyter-nbconvert-is-missing-what-are-my-options)
@@ -135,6 +136,16 @@ Use this rule of thumb:
 - Fork or pin a plugin only when you want to change plugin-owned behavior for every site using that plugin.
 - Run `bundle exec al-folio upgrade overrides audit` after dependency updates to identify local overrides whose upstream plugin files changed.
 - Commit `.al-folio-overrides.yml` after reviewing intentional overrides so future gem updates can flag stale copies explicitly.
+
+## Why does my website not override the new theme?
+
+In `v1.x`, al-folio runtime files moved into `al-*` gems. A local override still works, but only when all of the following are true:
+
+1. You add the override in **your site repo** (not in `alshedivat/al-folio` itself).
+2. The override path exactly matches the gem-owned path (for example, `_layouts/bib.liquid` or `_includes/repository/repo.liquid`).
+3. The owning plugin is enabled in both `Gemfile` and `_config.yml`.
+
+If your custom file appears to be ignored, first run `bundle exec al-folio upgrade audit` and `bundle exec al-folio upgrade overrides audit` to detect stale or misplaced overrides.
 
 ## How do I know when a local override is stale after a plugin update?
 
@@ -312,6 +323,7 @@ Build and deployment:
   - [After I update my site with some new content, even a small change, the GitHub action throws an error or displays a warning. What happened?](#after-i-update-my-site-with-some-new-content-even-a-small-change-the-github-action-throws-an-error-or-displays-a-warning-what-happened)
   - [How do I upgrade from al-folio v1.0 to v1.1+ with minimal friction?](#how-do-i-upgrade-from-al-folio-v10-to-v11-with-minimal-friction)
   - [Do I need to fork every v1 gem to customize layouts and Liquid files?](#do-i-need-to-fork-every-v1-gem-to-customize-layouts-and-liquid-files)
+  - [Why does my website not override the new theme?](#why-does-my-website-not-override-the-new-theme)
   - [How do I know when a local override is stale after a plugin update?](#how-do-i-know-when-a-local-override-is-stale-after-a-plugin-update)
   - [Why does v1.x starter not have npm run build:css anymore?](#why-does-v1x-starter-not-have-npm-run-buildcss-anymore)
   - [Jupyter posts are enabled, but my build says jupyter-nbconvert is missing. What are my options?](#jupyter-posts-are-enabled-but-my-build-says-jupyter-nbconvert-is-missing-what-are-my-options)
