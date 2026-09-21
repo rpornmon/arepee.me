@@ -30,6 +30,7 @@ Your DNA can inform you of many things about yourself, from health implications 
 
 I use population genetic approaches to study how human populations in Sub-Saharan Africa came to have genetic resistance to vivax malaria. You are likely thinking about "falciparum" malaria, which is a completely different species of parasite from vivax! While falciparum malaria poses a major health issue in Africa, vivax malaria is notably absent in Sub-Saharan Africa despite the region's suitable climate. This is due to a mutation that is hypothesized to occur a long time ago in a West African population that is the ancestral population to the people who speak the Bantu languages. Any carrier of this mutation maintains resistance against vivax malaria, so such mutation would spread like wildfire in the presence of vivax in the environment. This is how "natural selection" works! I am combining data from modern human and ancient DNA--DNA obtained from bones and teeth of people who lived thousands of years ago--to study the evolution of such mutation.
 
+<!-- 
 #### i watch movies sometimes
 <div id="letterboxd-embed-wrapper-tc">Loading...</div>
 <script>
@@ -38,4 +39,5 @@ I use population genetic approaches to study how human populations in Sub-Sahara
   .then(data => {
   document.getElementById('letterboxd-embed-wrapper-tc').innerHTML = data;
   });
-</script>
+</script> 
+-->
