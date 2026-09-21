@@ -1,0 +1,276 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> On the Degrees of Freedom | RP Pornmongkolsuk </title> <meta name="author" content="RP Pornmongkolsuk"> <meta name="description" content="Why degrees of freedom is 1 when testing independence assortment in testcross"> <meta name="keywords" content="rp, ratchanon pornmongkolsuk, genetics, population genetics, duke university, brown university, human evolution, ancient dna"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:; worker-src 'self' blob:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/RP_favicon.png?v=13f8e8e98512751cc1e63e9a08897fe6"> <link rel="apple-touch-icon" href="/assets/img/RP_favicon_180.png?v=a8c23e03784add60ab40e7af6b3a8199"> <link rel="stylesheet" href="/assets/css/main.css?v=4d4912fead42ad8bc65dce153d62b694"> <link rel="canonical" href="https://www.arepee.me/blog/2026/degrees_of_freedom/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> <link defer rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@planktimerr/tikzjax@1.0.8/dist/fonts.css" integrity="sha256-p+CQrhSq3dnLHELDcVBFDf4whOor3w8gzLuc/pwRLyQ=" crossorigin="anonymous"> </head> <body class="fixed-top-nav sticky-bottom-footer"> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand" href="/"> <img class="logo-dark" src="/assets/img/RP_favicon.png" alt="Logo" style="height: 32px; width: auto;"> <img class="logo-light" src="/assets/img/RP_favicon_light.png" alt="Logo" style="height: 32px; width: auto;"> </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item dropdown "> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-nav-dropdown-toggle="true" aria-haspopup="true" aria-expanded="false">gallery </a> <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"> <a class="dropdown-item " href="/photography/">photography</a> <div class="dropdown-divider"></div> <a class="dropdown-item " href="/art/">art</a> <div class="dropdown-divider"></div> <a class="dropdown-item " href="/dance/">dance</a> </div> </li> <li class="nav-item "> <a class="nav-link" href="/projects/">projects </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">cv </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">On the Degrees of Freedom</h1> <p class="post-meta"> Created on September 14, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/tag/scicomm"> <i class="fa-solid fa-hashtag fa-sm"></i> scicomm</a>   ·   <a href="/blog/category/bio202"> <i class="fa-solid fa-tag fa-sm"></i> bio202</a> </p> </header> <article class="post-content"> <div id="markdown-content"> <h4 id="intution-for-degrees-of-freedom">Intution for Degrees of Freedom</h4> <p>In biostatistics, the concept of the <a href="https://en.wikipedia.org/wiki/Degrees_of_freedom_(statistics)" rel="external nofollow noopener" target="_blank">degrees of freedom (df)</a> comes up often and is frequently misunderstood, or at least only partially understood. As a student, you may resort to <em>memorization</em> on a case-by-case basis when df comes up in biology classes. Well, so did I. Notably, the equation is <code class="language-plaintext highlighter-rouge">df = N-1</code>, when <code class="language-plaintext highlighter-rouge">N</code> is the number of classes of data.</p> <p>To wrap your head around the idea of df, let’s imagine that you’re a coach for a soccer team. <i class="fa-solid fa-futbol"></i></p> <p>You have <code class="language-plaintext highlighter-rouge">11</code> players to fit <code class="language-plaintext highlighter-rouge">11</code> positions on the field. You may assign any player to any position you want, but once you’ve assigned <code class="language-plaintext highlighter-rouge">10</code> out of <code class="language-plaintext highlighter-rouge">11</code> players, you no longer have the choice to assign the last player as you desire. The player would have to play whichever the last position that’s left open. So, the number of degrees of freedom that you have is <code class="language-plaintext highlighter-rouge">11 - 1 = 10</code>. However, <em>picking the right <code class="language-plaintext highlighter-rouge">N</code> can be tricky</em>.</p> <p>Say, you’re interested in investigating the sources of daily caffeine—<code class="language-plaintext highlighter-rouge">coffee</code>, <code class="language-plaintext highlighter-rouge">tea</code>, <code class="language-plaintext highlighter-rouge">soda</code>, and <code class="language-plaintext highlighter-rouge">energy drinks</code>—for average Americans.</p> <div class="text-center"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/degrees_of_freedom/coffee-beans-480.webp 480w,/assets/img/degrees_of_freedom/coffee-beans-800.webp 800w,/assets/img/degrees_of_freedom/coffee-beans-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/degrees_of_freedom/coffee-beans.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" style=" max-height: 250px; " loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> </figure> </div> <div class="caption"> What's your choice for caffeine? Or you may not need caffeine at all! </div> <p>However, your research collaborator gave your the data, they were tabulated with brand choices for soda as well. Knowing whether the soda brand choice was a Coca-Cola or Dr. Pepper isn’t more or less helpful for the question you’re investigating, which only concerns the types of the drinks. So, the relevant level of <em>freedom</em> for this particular question for this particular set of data is within the constraint of caffeine sources, and not brands. So, you may use the number of degrees of freedom to be <code class="language-plaintext highlighter-rouge">4 - 1 = 3</code>.</p> <p>The key takeaway is that <strong>the degrees of freedom depend on both the data AND the question</strong> that’s being asked. Same data but different question may have different degrees of freedom in your analysis.</p> <h4 id="lenticular-coin-flips-a-chi-square-case-study">Lenticular Coin Flips: a Chi-Square Case-Study</h4> <p>On your last birthday, your parent surprised you with an amazing present, a collectible <a href="https://en.wikipedia.org/wiki/Lenticular_printing" rel="external nofollow noopener" target="_blank">lenticular</a> coin you’d been asking for. It is special, because depending on the angle you’re looking at the coin, the engraving may appear as a <code class="language-plaintext highlighter-rouge">dragon</code> or a <code class="language-plaintext highlighter-rouge">monkey</code>.</p> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/degrees_of_freedom/dragon-head-480.webp 480w,/assets/img/degrees_of_freedom/dragon-head-800.webp 800w,/assets/img/degrees_of_freedom/dragon-head-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/degrees_of_freedom/dragon-head.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" style=" max-height: 200px; " loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> <figcaption class="caption">dragon heads</figcaption> </figure> </div> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/degrees_of_freedom/dragon-tail-480.webp 480w,/assets/img/degrees_of_freedom/dragon-tail-800.webp 800w,/assets/img/degrees_of_freedom/dragon-tail-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/degrees_of_freedom/dragon-tail.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" style=" max-height: 200px; " loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> <figcaption class="caption">dragon tails</figcaption> </figure> </div> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/degrees_of_freedom/monkey-head-480.webp 480w,/assets/img/degrees_of_freedom/monkey-head-800.webp 800w,/assets/img/degrees_of_freedom/monkey-head-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/degrees_of_freedom/monkey-head.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" style=" max-height: 200px; " loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> <figcaption class="caption">monkey heads</figcaption> </figure> </div> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/degrees_of_freedom/monkey-tail-480.webp 480w,/assets/img/degrees_of_freedom/monkey-tail-800.webp 800w,/assets/img/degrees_of_freedom/monkey-tail-1400.webp 1400w," type="image/webp" sizes="95vw"></source> <img src="/assets/img/degrees_of_freedom/monkey-tail.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" style=" max-height: 200px; " loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> <figcaption class="caption">monkey tails</figcaption> </figure> </div> </div> <p>Now, your friend had asked you to referee a soccer game, you need to coin flip to decide who gets the kickoff. Naturally, you’d like to use your newly minted dragon-monkey coin, but you aren’t sure if the coin was even <em>fair</em>.</p> <p>You set out to investigate if your gifted coin has the same chances of the coin landing <code class="language-plaintext highlighter-rouge">heads</code> as <code class="language-plaintext highlighter-rouge">tails</code> by tossing the coin <code class="language-plaintext highlighter-rouge">1000</code> times and conducting a Chi-square test. You write down all your observations. The coin still has <code class="language-plaintext highlighter-rouge">heads</code> and <code class="language-plaintext highlighter-rouge">tails</code> like any other coin; however, because the orientation in which the coin lands is random, when it lands a <code class="language-plaintext highlighter-rouge">heads</code>, about <em>50%</em> of the times you’d see a head of a <code class="language-plaintext highlighter-rouge">dragon</code>. The other <em>50%</em> of the times, you’d see a head of a <code class="language-plaintext highlighter-rouge">monkey</code>. The <code class="language-plaintext highlighter-rouge">heads</code> and <code class="language-plaintext highlighter-rouge">tails</code> results are independently of whether you’re looking at a <code class="language-plaintext highlighter-rouge">dragon</code> or a <code class="language-plaintext highlighter-rouge">monkey</code>.</p> <p><br></p> <div class="row mt-3"> <table> <thead> <tr> <th align="left">coin toss results</th> <th align="right">count</th> </tr> </thead> <tbody> <tr> <td valign="middle"> <img src="/assets/img/degrees_of_freedom/dragon-head.png" width="50" style="vertical-align: middle;"> dragon heads </td> <td valign="middle">119</td> </tr> <tr> <td valign="middle"> <img src="/assets/img/degrees_of_freedom/dragon-tail.png" width="50" style="vertical-align: middle;"> dragon tails </td> <td valign="middle">370</td> </tr> <tr> <td valign="middle"> <img src="/assets/img/degrees_of_freedom/monkey-head.png" width="50" style="vertical-align: middle;"> monkey heads </td> <td valign="middle">135</td> </tr> <tr> <td valign="middle"> <img src="/assets/img/degrees_of_freedom/monkey-tail.png" width="50" style="vertical-align: middle;"> monkey tails </td> <td valign="middle">376</td> </tr> </tbody> <caption style="caption-side:bottom">1000 coin toss results</caption> </table> </div> <p><br></p> <p>You finally have all the information you need to conduct a Chi-square test of your own. However, you remember that you’re only testing to see if this coin is <em>fair</em>, which has nothing to do with whether you’re observing a <code class="language-plaintext highlighter-rouge">dragon</code> or a <code class="language-plaintext highlighter-rouge">monkey</code> engraving. Therefore, whether you see a <code class="language-plaintext highlighter-rouge">dragon</code> or a <code class="language-plaintext highlighter-rouge">monkey</code> head engraving, you can lump both of them together as the times that the coin lands <code class="language-plaintext highlighter-rouge">heads</code>. Same for <code class="language-plaintext highlighter-rouge">tails</code>.</p> <p><br></p> <div class="row mt-3"> <table> <thead> <tr> <th>coin flip results</th> <th>counts</th> </tr> </thead> <tbody> <tr> <td>combined heads</td> <td>119 + 135 = 254</td> </tr> <tr> <td>combined tails</td> <td>370 + 376 = 746</td> </tr> <tr> <td>total</td> <td>254 + 746 = 1000</td> </tr> </tbody> <caption style="caption-side:bottom">1000 coin toss combined results</caption> </table> </div> <p><br></p> <p>It’s probably quite obvious now that the coin is <em>NOT fair</em>, but you calculate the Chi-square test nonetheless.</p> <p><br></p> <div class="row mt-3"> <table> <thead> <tr> <th>classes</th> <th>observed</th> <th>expected</th> <th>$(O-E)$</th> <th>$(O-E)^2$</th> <th>$\frac{(O-E)^2}{E}$</th> </tr> </thead> <tbody> <tr> <td>heads</td> <td>254</td> <td>500</td> <td>254 - 500 = -246</td> <td>60516</td> <td>121.03</td> </tr> <tr> <td>tails</td> <td>746</td> <td>500</td> <td>746 - 500 = 246</td> <td>60516</td> <td>121.03</td> </tr> </tbody> <caption style="caption-side:bottom">Chi-square calculation</caption> </table> </div> <p><br></p> <p>Therefore, our Chi-square value is <code class="language-plaintext highlighter-rouge">242.06</code>! And what should the degrees of freedom be? Since there are only two classes, <code class="language-plaintext highlighter-rouge">heads</code> or <code class="language-plaintext highlighter-rouge">tails</code>, the degrees of freedom is <code class="language-plaintext highlighter-rouge">2 - 1 = 1</code>! At <code class="language-plaintext highlighter-rouge">p = 0.05</code>, the Chi-square threshold is <code class="language-plaintext highlighter-rouge">3.841</code>.</p> <p>Our calculated Chi-square value for this coin is <em>WAY HIGHER</em> than the threshold. So we can <em>reject</em> our null hypothesis that this coin is <em>fair</em>!! It looks like you’re going to have to bring another coin to your friend’s soccer game.</p> <p><em>Can you spot the connection between this example and testing for independent assortment using a test cross?</em></p> <h4 id="testcross-application">Testcross Application</h4> <p>In a sexually-reproducing, diploid organism, let’s set up a testcross for <code class="language-plaintext highlighter-rouge">1000</code> offspring (see diagram below) and to test for <code class="language-plaintext highlighter-rouge">independent assortment</code>—<em>meaning the chances that a meiotic gamete receives <code class="language-plaintext highlighter-rouge">parental</code> vs <code class="language-plaintext highlighter-rouge">recombinant</code> pairs of A and B allele are equal</em>.</p> <div class="text-center"> <script type="text/tikz">
+    \begin{tikzpicture}[font=\sffamily\bfseries]
+
+      \node (P) at (0, 1) {P};
+      \node (Pa) at (2, 1) {\textcolor{red}{Ab}/\textcolor{red}{Ab}};
+      \node (Pb) at (4, 1) {\textcolor{teal}{aB}/\textcolor{teal}{aB}};
+      \node (X1) at (3, 1) {x};
+      
+      \node (F1) at (0, 0) {F1};
+      \node (F1a) at (3, 0) {\textcolor{red}{Ab}/\textcolor{teal}{aB}};
+      \node (F1b) at (5, 0) {ab/ab};
+      \node (X2) at (4, 0) {x};
+
+      \node (F2) at (0, -1) {F2};
+      \node (F2a) at (2, -1) {\textcolor{red}{AA}/ab};
+      \node (F2b) at (3.5, -1) {\textcolor{teal}{ab}/ab};
+      \node (F2c) at (5, -1) {\textcolor{red}{A}\textcolor{teal}{b}/ab};
+      \node (F2d) at (6.5, -1) {\textcolor{teal}{a}\textcolor{red}{b}/ab};
+
+      \node (N) at (0, -2) {count};
+      \node (Na) at (2, -2) {370};
+      \node (Nb) at (3.5, -2) {376};
+      \node (Nc) at (5, -2) {119};
+      \node (Nd) at (6.5, -2) {135};
+
+      \draw[->] (X1) -- (F1a);
+      \draw[->] (X2) -- (F2a);
+      \draw[->] (X2) -- (F2b);
+      \draw[->] (X2) -- (F2c);
+      \draw[->] (X2) -- (F2d);
+
+    \end{tikzpicture}
+  </script> <div class="caption">A diagram of the testcross experiment</div> </div> <p>You observe <code class="language-plaintext highlighter-rouge">4</code> different phenotypes based on the <code class="language-plaintext highlighter-rouge">4</code> haplotypes shown above. However, similarly to how your lenticular coin can show a <code class="language-plaintext highlighter-rouge">dragon</code> or a <code class="language-plaintext highlighter-rouge">monkey</code>, when a crossing over occurs between the <code class="language-plaintext highlighter-rouge">A</code> and <code class="language-plaintext highlighter-rouge">B</code> loci during meiosis, you may observe <code class="language-plaintext highlighter-rouge">1</code> of the <code class="language-plaintext highlighter-rouge">2</code> possible <code class="language-plaintext highlighter-rouge">recombinant</code> haplotypes with equal probability. In this example, the <code class="language-plaintext highlighter-rouge">recombinant</code> haplotypes would be the <code class="language-plaintext highlighter-rouge">AB</code> or <code class="language-plaintext highlighter-rouge">ab</code> gametes. Recognizing this pattern, you combine those two categories into one <code class="language-plaintext highlighter-rouge">recombinant</code> class. The rest goes into the <code class="language-plaintext highlighter-rouge">parental</code> class.</p> <p>What’s the degrees of freedom? Since there are <code class="language-plaintext highlighter-rouge">2</code> classes: <code class="language-plaintext highlighter-rouge">df = 2 - 1 = 1</code>.</p> <div class="text-center"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/degrees_of_freedom/meiosis.svg" sizes="95vw"></source> <img src="/assets/img/degrees_of_freedom/meiosis.svg" class="img-fluid rounded z-depth-1" width="auto" height="auto" style=" max-height: 300px; " data-zoomable="" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </picture> </figure> <div class="caption">A (highly simplified) diagram of meiosis </div> </div> <h5 id="bonus-questions">Bonus questions:</h5> <ol> <li>Can you calculate the Chi-square value for the testcross results above? What’s the null hypothesis? Do you reject the null?</li> <li>How would you test if the probability of seeing the <code class="language-plaintext highlighter-rouge">dragon</code> engraving is actually the same as a <code class="language-plaintext highlighter-rouge">monkey</code> (50:50)?</li> </ol> </div> </article> </div> </div> <footer class="sticky-bottom mt-5" role="contentinfo"> <div class="container"> © Copyright 2026 RP Pornmongkolsuk. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub pages</a>. Icons from <a href="https://jpswalsh.github.io/academicons/" target="_blank" rel="external nofollow noopener">Academicons</a>, <a href="https://fontawesome.com/" target="_blank" rel="external nofollow noopener">Font Awesome</a>, and <a href="https://louisfacun.github.io/scholar-icons/" target="_blank" rel="external nofollow noopener">Scholar Icons</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/@planktimerr/tikzjax@1.0.8/dist/tikzjax.js" type="text/javascript" integrity="sha256-7SCmUR11IG4MkSoeLUq0pombv7oeV7yZuu7Z82e4Uy4=" crossorigin="anonymous"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script defer src="/assets/js/table-engine.js?v=c52129a997ab5b8a3622ec0506761421" type="text/javascript"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "dropdown-photography",
+              title: "photography",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/photography/";
+              },
+            },{id: "dropdown-art",
+              title: "art",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/art/";
+              },
+            },{id: "dropdown-dance",
+              title: "dance",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/dance/";
+              },
+            },{id: "nav-projects",
+          title: "projects",
+          description: "A growing collection my interests",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-cv",
+          title: "cv",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "post-on-the-degrees-of-freedom",
+        
+          title: "On the Degrees of Freedom",
+        
+        description: "Why degrees of freedom is 1 when testing independence assortment in testcross",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/degrees_of_freedom/";
+          
+        },
+      },{id: "post-google-gemini-updates-flash-1-5-gemma-2-and-project-astra",
+        
+          title: 'Google Gemini updates: Flash 1.5, Gemma 2 and Project Astra <svg width="1.2rem" height="1.2rem" top=".5rem" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "We’re sharing updates across our Gemini family of models and a glimpse of Project Astra, our vision for the future of AI assistants.",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/", "_blank");
+          
+        },
+      },{id: "post-displaying-external-posts-on-your-al-folio-blog",
+        
+          title: 'Displaying External Posts on Your al-folio Blog <svg width="1.2rem" height="1.2rem" top=".5rem" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://medium.com/@al-folio/displaying-external-posts-on-your-al-folio-blog-b60a1d241a0a?source=rss-17feae71c3c4------2", "_blank");
+          
+        },
+      },{id: "books-the-godfather",
+          title: 'The Godfather',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/the_godfather/";
+            },},{id: "news-a-simple-inline-announcement",
+          title: 'A simple inline announcement.',
+          description: "",
+          section: "News",},{id: "news-a-long-announcement-with-details",
+          title: 'A long announcement with details',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_2/";
+            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
+          title: 'A simple inline announcement with Markdown emoji! <img class="emoji" title=":sparkles:" alt=":sparkles:" src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png" height="20" width="20"> <img class="emoji" title=":smile:" alt=":smile:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png" height="20" width="20">',
+          description: "",
+          section: "News",},{id: "projects-adna-imputation",
+          title: 'aDNA imputation',
+          description: "phd dissertation project",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/aDNA_imputation/";
+            },},{id: "projects-biology-202",
+          title: 'biology 202',
+          description: "teaching tools for intro to biology concepts",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/bio202/";
+            },},{id: "projects-genetics-of-dune",
+          title: 'genetics of dune',
+          description: "another without an image",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/genetics_of_dune/";
+            },},{id: "projects-happy-new-year",
+          title: 'happy new year',
+          description: "new year cards",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/happy_new_year/";
+            },},{id: "projects-humanity-39-s-best-friends",
+          title: 'humanity&#39;s best friends',
+          description: "our beautiful co-habitants",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/humanity_best_friends/";
+            },},{id: "projects-inktober",
+          title: 'inktober',
+          description: "inking in october",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/inktober/";
+            },},{id: "projects-res-publica",
+          title: 'res publica',
+          description: "amateur zine",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/res_publica/";
+            },},{id: "projects-sands-of-time",
+          title: 'sands of time',
+          description: "illustration of my first dnd campaign",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/sands_of_time/";
+            },},{id: "projects-slay-the-smile",
+          title: 'slay the smile',
+          description: "amateur comic strip",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/slay_the_smile/";
+            },},{id: "projects-wish-you-were-here",
+          title: 'wish you were here',
+          description: "empty spaces between people",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/wish_you_were_here/";
+            },},{id: "projects-wizteria",
+          title: 'wizteria',
+          description: "with background image",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/wizteria/";
+            },},{id: "teachings-data-science-fundamentals",
+          title: 'Data Science Fundamentals',
+          description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/data-science-fundamentals/";
+            },},{id: "teachings-introduction-to-machine-learning",
+          title: 'Introduction to Machine Learning',
+          description: "This course provides an introduction to machine learning concepts, algorithms, and applications. Students will learn about supervised and unsupervised learning, model evaluation, and practical implementations.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/introduction-to-machine-learning/";
+            },},{
+        id: 'social-linktree',
+        title: 'Linktree',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://linktr.ee/arepee", "_blank");
+        },
+      },{
+        id: 'social-cv',
+        title: 'CV',
+        section: 'Socials',
+        handler: () => {
+          window.open("/assets/pdf/example_pdf.pdf", "_blank");
+        },
+      },{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%72%70%32%38%30@%64%75%6B%65.%65%64%75", "_blank");
+        },
+      },{
+        id: 'social-linkedin',
+        title: 'LinkedIn',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.linkedin.com/in/rpornmon", "_blank");
+        },
+      },{
+        id: 'social-letterboxd_id',
+        title: 'Letterboxd_id',
+        section: 'Socials',
+        handler: () => {
+          window.open("", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
