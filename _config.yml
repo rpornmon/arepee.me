@@ -5,18 +5,20 @@
 title: blank # the website title (if blank, full name will be used instead)
 first_name: RP
 last_name: Pornmongkolsuk
-contact_note: >
-  You can even add a little note about which of these is the best way to reach you.
-description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+# contact_note: >
+#   You can even add a little note about which of these is the best way to reach you.
+# description: > # the ">" symbol means to ignore newlines until "footer_text:"
+#   A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
-  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-  Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
-keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
+  Hosted by <a href="https://pages.github.com/" target="_blank">GitHub pages</a>.
+  Icons from <a href="https://jpswalsh.github.io/academicons/" target="_blank">Academicons</a>, <a href="https://fontawesome.com/" target="_blank">Font Awesome</a>, and <a href="https://louisfacun.github.io/scholar-icons/" target="_blank">Scholar Icons</a>.
+keywords: rp, ratchanon pornmongkolsuk, genetics, population genetics, duke university, brown university, human evolution, ancient dna
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: RP_favicon.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
-apple_touch_icon: # image name in /assets/img/ (or a rooted path / absolute URL) used for iOS home-screen bookmarks; needs a real 180x180 PNG, since Safari ignores the emoji favicon above. Left empty, iOS falls back to a screenshot of the page.
+apple_touch_icon: RP_favicon_180.png # image name in /assets/img/ (or a rooted path / absolute URL) used for iOS home-screen bookmarks; needs a real 180x180 PNG, since Safari ignores the emoji favicon above. Left empty, iOS falls back to a screenshot of the page.
+navbar_logo: /assets/img/RP_favicon.png
+navbar_logo_light:  /assets/img/RP_favicon_light.png
 
 url: https://www.arepee.me
 baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
@@ -132,11 +134,30 @@ google_site_verification: # your google-site-verification ID (Google Search Cons
 bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 
 # -----------------------------------------------------------------------------
+# Photography
+# -----------------------------------------------------------------------------
+photo_name: no money for old lens
+photo_description: through the viewfinder
+photo_tags: ["wish you were here", "humanity's best friend", "bull city"] 
+
+# -----------------------------------------------------------------------------
+# Art
+# -----------------------------------------------------------------------------
+art_name: are peas nuts?
+art_description: silly doodles
+
+# -----------------------------------------------------------------------------
+# Dance
+# -----------------------------------------------------------------------------
+dance_name: on the tap
+dance_description: troy bolton can only dream
+
+# -----------------------------------------------------------------------------
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: al-folio # blog_name will be displayed in your blog page
-blog_description: a simple whitespace theme for academics
+blog_name: my rpnions # blog_name will be displayed in your blog page
+blog_description: brain dumpster
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
@@ -229,6 +250,12 @@ kramdown:
 # Includes & excludes
 include: ["_pages"]
 exclude:
+  - _pages/about_einstein.md
+  - _pages/plugins.md
+  - _pages/publications.md
+  - _pages/repositories.md
+  - _pages/teaching.md
+  - _pages/profiles.md
   - AGENTS.md
   - al-folio-upgrade-report.md
   - bin/

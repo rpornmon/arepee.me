@@ -6,6 +6,24 @@ GIT
       jekyll (>= 0.10.0)
       terser (>= 1.0.0)
 
+GIT
+  remote: https://github.com/rpornmon/rp-folio-core.git
+  revision: fbe6c453bf669c14db61576f5e44fe6b59ad17b9
+  branch: main
+  specs:
+    al_folio_core (1.0.15)
+      jekyll (>= 3.9, < 5.0)
+      liquid (>= 4.0, < 6.0)
+
+GIT
+  remote: https://github.com/rpornmon/rp-folio-cv.git
+  revision: 3b7ce212c54517330c55842352b2b5683183fb0f
+  branch: main
+  specs:
+    al_folio_cv (1.0.2)
+      jekyll (>= 3.9, < 5.0)
+      liquid (>= 4.0, < 6.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -48,12 +66,6 @@ GEM
       jekyll (>= 3.9, < 5.0)
       nokogiri (>= 1.13, < 2.0)
     al_folio_bootstrap_compat (1.0.0)
-      jekyll (>= 3.9, < 5.0)
-      liquid (>= 4.0, < 6.0)
-    al_folio_core (1.0.15)
-      jekyll (>= 3.9, < 5.0)
-      liquid (>= 4.0, < 6.0)
-    al_folio_cv (1.0.2)
       jekyll (>= 3.9, < 5.0)
       liquid (>= 4.0, < 6.0)
     al_folio_distill (1.0.3)
@@ -362,8 +374,8 @@ DEPENDENCIES
   al_email_protect (= 1.0.1)
   al_ext_posts (= 1.0.3)
   al_folio_bootstrap_compat (= 1.0.0)
-  al_folio_core (= 1.0.15)
-  al_folio_cv (= 1.0.2)
+  al_folio_core!
+  al_folio_cv!
   al_folio_distill (= 1.0.3)
   al_folio_upgrade (= 1.0.3)
   al_icons (= 1.0.0)
@@ -410,8 +422,8 @@ CHECKSUMS
   al_email_protect (1.0.1) sha256=04d1e9b19a47d26e6fa238baba197165653002c788b60525fef093ee1a3989e5
   al_ext_posts (1.0.3) sha256=c4956d36071958d30de14f6c368863d3e4190dfe312dba08ff79aa685292420d
   al_folio_bootstrap_compat (1.0.0) sha256=c210ff3087f17344dc864fa9594c737e947b23c6cae9fab3dbd37a87090b98a8
-  al_folio_core (1.0.15) sha256=eee5d0afefab5d3e8747b615890d760ed0ab01a1210991118709c4e969ad1326
-  al_folio_cv (1.0.2) sha256=d9b8d3624c0c707a04deaa41972fa88395fa164419bccc44e2dc2488400022fa
+  al_folio_core (1.0.15)
+  al_folio_cv (1.0.2)
   al_folio_distill (1.0.3) sha256=3feb669dd669effec127e1be5385158c5f98062c510980b5c9c802227ec2c247
   al_folio_upgrade (1.0.3) sha256=434ffddb27705852eae0bcaa01a8d007e0ef65472a989d1a33ae759f910f4709
   al_icons (1.0.0) sha256=7a7b6428d18e77b039aa1ae765a3faed0ae27cb646a08c1009b145c31ca5ef2d

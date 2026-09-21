@@ -1,10 +1,11 @@
 ---
 layout: page
-title: project 9
-description: another project with an image 🎉
-img: assets/img/6.jpg
-importance: 4
-category: fun
+title: res publica
+description: amateur zine
+img: assets/img/7.jpg
+redirect: https://www.wikipedia.org/
+importance: 3
+category: scicomm
 ---
 
 Every project has a beautiful feature showcase page.

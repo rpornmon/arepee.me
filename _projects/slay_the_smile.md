@@ -1,10 +1,10 @@
 ---
 layout: page
-title: project 6
-description: a project with no image
+title: slay the smile
+description: amateur comic strip
 img:
 importance: 4
-category: fun
+category: art
 ---
 
 Every project has a beautiful feature showcase page.
