@@ -13,7 +13,7 @@ cv:
   address:
     city: Durham
     region: North Carolina
-    countryCode: US
+    country_code: US
 
   sections:
     education:
