@@ -1,175 +1,189 @@
 cv:
-  name: RP Pornmongkolsuk
-  label: Geneticist & Science Communicator
-  email: rp280@duke.edu
-  location: Durham, NC
-  image: asset/img/prof_pic.jpg
-  summary: > 
-    Ph.D. candidate in population genetics with a natural curiosity 
-    about human adaptations, a strong foundation in statistical and 
-    computational approaches, and a deep passion for engaging non-scientific 
-    audiences through writing and content creation.
+  name: Albert Einstein
+  label: Scientist
+  email: einstein@example.com
+  location: Princeton, NJ
+  image: ""
+  summary: A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time
+
+  social_networks:
+    - network: X
+      username: AlbertEinstein
+    - network: GitHub
+      username: example
+    - network: LinkedIn
+      username: example
 
   address:
-    city: Durham
-    region: North Carolina
-    country_code: US
+    street: 2712 Broadway St
+    city: San Francisco
+    region: California
+    postalCode: CA 94115
+    countryCode: US
 
   sections:
-    education:
-      - institution: Duke University
-        area: Genetics & Genomics
-        degree: PhD
-        start_date: 2021-08
-        end_date: 
-        location: Durham, NC
-        summary:
+    Education:
+      - institution: University of Zurich
+        location: Zurich, Switzerland
+        url: https://www.uzh.ch/
+        area: Physics
+        studyType: PhD
+        start_date: 1900
+        end_date: 1905
+        score: ""
+        courses: "Theory of Relativity"
         highlights:
-      - institution: Brown University
-        area: Biology
-        degree: BA
-        date:
-        start_date: 2017-08
-        end_date: 2021-05
-        location: Providence, RI
-        summary:
+          - Description 1.
+          - Description 2.
+
+      - institution: Eidgenössische Technische Hochschule
+        location: Zurich, Switzerland
+        area: Physics
+        studyType: Federal teaching diploma
+        start_date: 1896
+        end_date: 1900
         highlights:
-    experience:
-      - company: Duke University
-        position: PhD researcher
-        date:
-        start_date: 2021-08
-        end_date: 
-        location: Durham, NC
-        summary:
+          - Description 1.
+          - Description 2.
+
+    Experience:
+      - company: Institute for Advanced Study, Princeton University
+        position: Professor of Theoretical Physics
+        location: Princeton University, NJ
+        start_date: 1933
+        end_date: 1955
+        summary: Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.
         highlights:
-          - Characterized population structures in ancient and modern African human sequences using PCA
-          - Developing a novel, regression-based method for single nucleotide imputation of ancient African DNA
-          - Leveraging ancient DNA in studying human adaptation to vivax malaria in Sub-Saharan Africa
-      - company: Ford Library At The Fuqua School Of Business
-        position: Circulation Clerk
-        date:
-        start_date: 2024-11
-        end_date: 
-        location: Durham, NC
-        summary:
+          - Relativity
+          - Description 2.
+
+      - company: California Institute of Technology
+        position: Visiting Professor
+        location: Pasadena, California, US
+        start_date: 1933
+        end_date: 1933
         highlights:
-          - Circulating library materials both online and manually
-          - Answering patrons' directional and policy questions
-          - Sorting and re-shelving returned materials
-          - Assisting the Collection Services Librarian and other library staff as needed
-      # - company: Google DeepMind
-      #   position: Research Intern
-      #   date:
-      #   start_date: 2021-05
-      #   end_date: 2021-08
-      #   location: London, UK
-      #   summary:
-      #   highlights:
-      #     - Developed reinforcement learning algorithms for multi-agent coordination
-      #     - Published research at top-tier venues with significant academic impact
-      #       - ICML 2022 main conference paper, cited 340+ times within two years
-      #       - NeurIPS 2022 workshop paper on emergent communication protocols
-      #       - Invited journal extension in JMLR (2023)
-    #   - company: Apple ML Research
-    #     position: Research Intern
-    #     date:
-    #     start_date: 2020-05
-    #     end_date: 2020-08
-    #     location: Cupertino, CA
-    #     summary:
-    #     highlights:
-    #       - Created on-device neural network compression pipeline deployed across 50M+ devices
-    #       - Filed 2 patents on efficient model quantization techniques for edge inference
-    #   - company: Microsoft Research
-    #     position: Research Intern
-    #     date:
-    #     start_date: 2019-05
-    #     end_date: 2019-08
-    #     location: Redmond, WA
-    #     summary:
-    #     highlights:
-    #       - Implemented novel self-supervised learning framework for low-resource language modeling
-    #       - Research integrated into Azure Cognitive Services, reducing training data requirements by 60%
-    # projects:
-    #   - name: '[FlashInfer](https://github.com/)'
-    #     date:
-    #     start_date: 2023-01
-    #     end_date: present
-    #     location:
-    #     summary: Open-source library for high-performance LLM inference kernels
-    #     highlights:
-    #       - Achieved 2.8x speedup over baseline attention implementations on A100 GPUs
-    #       - Adopted by 3 major AI labs, 8,500+ GitHub stars, 200+ contributors
-    #   - name: '[NeuralPrune](https://github.com/)'
-    #     date: '2021'
-    #     start_date:
-    #     end_date:
-    #     location:
-    #     summary: Automated neural network pruning toolkit with differentiable masks
-    #     highlights:
-    #       - Reduced model size by 90% with less than 1% accuracy degradation on ImageNet
-    #       - Featured in PyTorch ecosystem tools, 4,200+ GitHub stars
-    # publications:
-    #   - title: 'Sparse Mixture-of-Experts at Scale: Efficient Routing for Trillion-Parameter Models'
-    #     authors:
-    #       - '*John Doe*'
-    #       - Sarah Williams
-    #       - David Park
-    #     summary:
-    #     doi: 10.1234/neurips.2023.1234
-    #     url:
-    #     journal: NeurIPS 2023
-    #     date: 2023-07
-    #   - title: Neural Architecture Search via Differentiable Pruning
-    #     authors:
-    #       - James Liu
-    #       - '*John Doe*'
-    #     summary:
-    #     doi: 10.1234/neurips.2022.5678
-    #     url:
-    #     journal: NeurIPS 2022, Spotlight
-    #     date: 2022-12
-    #   - title: Multi-Agent Reinforcement Learning with Emergent Communication
-    #     authors:
-    #       - Maria Garcia
-    #       - '*John Doe*'
-    #       - Tom Anderson
-    #     summary:
-    #     doi: 10.1234/icml.2022.9012
-    #     url:
-    #     journal: ICML 2022
-    #     date: 2022-07
-    #   - title: On-Device Model Compression via Learned Quantization
-    #     authors:
-    #       - '*John Doe*'
-    #       - Kevin Wu
-    #     summary:
-    #     doi: 10.1234/iclr.2021.3456
-    #     url:
-    #     journal: ICLR 2021, Best Paper Award
-    #     date: 2021-05
-    # selected_honors:
-    #   - bullet: MIT Technology Review 35 Under 35 Innovators (2024)
-    #   - bullet: Forbes 30 Under 30 in Enterprise Technology (2024)
-    #   - bullet: ACM Doctoral Dissertation Award Honorable Mention (2023)
-    #   - bullet: Google PhD Fellowship in Machine Learning (2020 – 2023)
-    #   - bullet: Fulbright Scholarship for Graduate Studies (2018)
-    # skills:
-    #   - label: Languages
-    #     details: Python, C++, CUDA, Rust, Julia
-    #   - label: ML Frameworks
-    #     details: PyTorch, JAX, TensorFlow, Triton, ONNX
-    #   - label: Infrastructure
-    #     details: Kubernetes, Ray, distributed training, AWS, GCP
-    #   - label: Research Areas
-    #     details: Neural architecture search, model compression, efficient inference, multi-agent RL
-    # patents:
-    #   - number: Adaptive Quantization for Neural Network Inference on Edge Devices (US Patent 11,234,567)
-    #   - number: Dynamic Sparsity Patterns for Efficient Transformer Attention (US Patent 11,345,678)
-    #   - number: Hardware-Aware Neural Architecture Search Method (US Patent 11,456,789)
-    # invited_talks:
-    #   - reversed_number: Scaling Laws for Efficient Inference — Stanford HAI Symposium (2024)
-    #   - reversed_number: Building AI Infrastructure for the Next Decade — TechCrunch Disrupt (2024)
-    #   - reversed_number: 'From Research to Production: Lessons in ML Systems — NeurIPS Workshop (2023)'
-    #   - reversed_number: "Efficient Deep Learning: A Practitioner's Perspective — Google Tech Talk (2022)"
+          - Description 1.
+          - Description 2.
+
+      - company: Kaiser Wilhelm Institute for Physics
+        position: Director
+        location: Berlin, Germany
+        start_date: 1917
+        end_date: 1933
+
+      - company: Karl-Ferdinand University
+        position: Professor of Theoretical Physics
+        location: Prague, Czechoslovakia
+        start_date: 1911
+        end_date: 1917
+
+      - company: University of Zurich
+        position: Associate Professor of Theoretical Physics
+        location: Zurich, Switzerland
+        start_date: 1909
+        end_date: 1911
+
+    Volunteer:
+      - company: People's Climate March
+        position: Lead Organizer
+        location: Zurich, Switzerland
+        start_date: 2014-04-01
+        end_date: 2015-07-01
+        summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
+        highlights:
+          - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
+          - "Men of the year 2014 by Time magazine"
+
+    Awards:
+      - title: Nobel Prize in Physics
+        authors:
+          - "Royal Swedish Academy of Sciences"
+        date: 1921-11-01
+        awarder: Royal Swedish Academy of Sciences
+        url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
+        summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
+
+      - title: Max Planck Medal
+        authors:
+          - "German Physical Society"
+        date: 2029
+        awarder: German Physical Society
+        summary: Awarded for outstanding scientific achievement
+
+    Publications:
+      - title: Zur Elektrodynamik bewegter Körper
+        authors:
+          - Albert Einstein
+        publisher: Annalen der Physik
+        releaseDate: 1905-06-30
+        url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
+        summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source.
+
+      - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
+        authors:
+          - Albert Einstein
+        publisher: Annalen der Physik
+        releaseDate: 1905-03-18
+        url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
+        summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921.
+
+      - title: Die Grundlage der allgemeinen Relativitätstheorie
+        authors:
+          - Albert Einstein
+        publisher: Annalen der Physik
+        releaseDate: 1916-03-20
+        url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
+        summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
+
+    Skills:
+      - name: Physics
+        level: Master
+        icon: fa-solid fa-hashtag
+        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
+
+    Languages:
+      - name: German
+        summary: "Native speaker"
+
+      - name: English
+        summary: "Fluent"
+
+    Interests:
+      - name: Physics
+        icon: fa-solid fa-tag
+        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
+
+    Certificates:
+      - name: Machine Learning
+        date: 2018-01-01
+        issuer: Stanford University
+        icon: fa-solid fa-location-dot
+
+      - name: Quantum Computing
+        date: 2018-01-01
+        issuer: Stanford University
+        icon: fa-solid fa-tag
+
+      - name: Quantum Information
+        date: 2018-01-01
+        issuer: Stanford University
+        icon: fa-solid fa-envelope
+
+    Projects:
+      - name: Quantum Computing
+        summary: Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.
+        highlights:
+          - Quantum Teleportation
+          - Quantum Cryptography
+        start_date: 2018-01-01
+        end_date: 2018-01-01
+
+    References:
+      - name: Professor John Doe
+        icon: fa-solid fa-laptop
+        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+
+      - name: Professor Jane Smith
+        icon: fa-solid fa-thumbtack
+        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
