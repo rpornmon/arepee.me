@@ -2,6 +2,6 @@
 design:
   theme: harvard
   page:
-    size: us-letter
+    size: a4
     show_footer: false
     show_top_note: false

@@ -1,177 +1,494 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.8/schema.json
 cv:
   name: RP Pornmongkolsuk
-
-  social_networks:
-    - network: X
-      username: AlbertEinstein
-    - network: GitHub
-      username: example
-    - network: LinkedIn
-      username: example
-
+  headline:
+  location: Durham, NC
+  email: rp280@duke.edu
+  website: http://www.arepee.me
   sections:
+    Summary: 
+      - > 
+        A Ph.D. candidate in population genetics with a natural curiosity 
+        about human adaptations, a strong foundation in statistical and computational 
+        approaches, and a deep passion for engaging non-scientific audiences through 
+        multimedia storytelling.
     Education:
-      - institution: University of Zurich
-        location: Zurich, Switzerland
-        url: https://www.uzh.ch/
-        area: Physics
-        studyType: PhD
-        start_date: 1900
-        end_date: 1905
-        score: ""
-        courses: "Theory of Relativity"
+      - institution: Duke University
+        area: Genetics and Genomics
+        degree: PhD
+        date:
+        start_date: 2021-08
+        end_date: present
+        location: Durham, NC
+        summary:
         highlights:
-          - Description 1.
-          - Description 2.
-
-      - institution: Eidgenössische Technische Hochschule
-        location: Zurich, Switzerland
-        area: Physics
-        studyType: Federal teaching diploma
-        start_date: 1896
-        end_date: 1900
+      - institution: Brown University
+        area: Biology
+        degree: BA
+        date:
+        start_date: 2017-08
+        end_date: 2021-05
+        location: Providence, RI
+        summary:
         highlights:
-          - Description 1.
-          - Description 2.
-
-    Experience:
-      - company: Institute for Advanced Study, Princeton University
-        position: Professor of Theoretical Physics
-        location: Princeton University, NJ
-        start_date: 1933
-        end_date: 1955
-        summary: Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.
+    Graduate Research Experience:
+      - company: Alejandro Ochoa Lab
+        position: Graduate Researcher
+        start_date: 2022-05
+        end_date: present
+        location: Duke University
+        summary:
         highlights:
-          - Relativity
-          - Description 2.
-
-      - company: California Institute of Technology
-        position: Visiting Professor
-        location: Pasadena, California, US
-        start_date: 1933
-        end_date: 1933
+          - >
+            *Project*: Leveraging ancient DNA in studying human adaptation 
+            to vivax malaria in Africa in admixture context.
+          - >
+            Developing a novel, regression-based single-nucleotide imputation approach 
+            that improves imputation accuracy on ancient African DNA which are challenging due to 
+            (1) low coverage of ancient DNA sequences and 
+            (2) low linkage disequilibrium among African populations.
+          - >
+            Benchmarked performance of the low-coverage imputation tool GLIMPSE2 
+            in the imputation of ancient African genomes using simulations (SLiM, Msprime, Tskit).
+          - >
+            Built and performed pipelines for nucleotide imputation of the Duffy antigen receptor locus 
+            with custom African reference panel using Minimac4 and Beagle5.4 on ancient African genomes. 
+            Performance evaluation of above imputations was done via leave-one-out cross-validation.
+          - >
+            Characterized population structures in ancient and modern African human sequencing data 
+            using Principal Component Analyses (PCA), $$F_("ST")$$, $$F$$-statistics, ADMIXTURE software and the popkin R package.
+      - company: Amy Goldberg Lab
+        position: Rotation Graduate Researcher
+        start_date: 2022-03
+        end_date: 2022-04
+        location: Duke University
         highlights:
-          - Description 1.
-          - Description 2.
-
-      - company: Kaiser Wilhelm Institute for Physics
-        position: Director
-        location: Berlin, Germany
-        start_date: 1917
-        end_date: 1933
-
-      - company: Karl-Ferdinand University
-        position: Professor of Theoretical Physics
-        location: Prague, Czechoslovakia
-        start_date: 1911
-        end_date: 1917
-
-      - company: University of Zurich
-        position: Associate Professor of Theoretical Physics
-        location: Zurich, Switzerland
-        start_date: 1909
-        end_date: 1911
-
-    Volunteer:
-      - company: People's Climate March
-        position: Lead Organizer
-        location: Zurich, Switzerland
-        start_date: 2014-04-01
-        end_date: 2015-07-01
-        summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
+          - >
+            Developed a pipeline for joint analyses of archaeological (radiocarbon dating) 
+            and genetic data (whole genome sequences) in studying the Neolithic Revolution
+            —a wide-scale transition into agricultural society promoting population growth
+            —in East Asian populations.
+      - company: Craig Lowe Lab
+        position: Rotation Graduate Researcher
+        start_date: 2022-01
+        end_date: 2022-02
+        location: Duke University
         highlights:
-          - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
-          - "Men of the year 2014 by Time magazine"
-
-    Awards:
-      - title: Nobel Prize in Physics
-        authors:
-          - "Royal Swedish Academy of Sciences"
-        date: 1921-11-01
-        awarder: Royal Swedish Academy of Sciences
-        url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
-        summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
-
-      - title: Max Planck Medal
-        authors:
-          - "German Physical Society"
-        date: 2029
-        awarder: German Physical Society
-        summary: Awarded for outstanding scientific achievement
-
-    Publications:
-      - title: Zur Elektrodynamik bewegter Körper
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-06-30
-        url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
-        summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source.
-
-      - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-03-18
-        url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
-        summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921.
-
-      - title: Die Grundlage der allgemeinen Relativitätstheorie
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1916-03-20
-        url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
-        summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
-
-    Skills:
-      - name: Physics
-        level: Master
-        icon: fa-solid fa-hashtag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Languages:
-      - name: German
-        summary: "Native speaker"
-
-      - name: English
-        summary: "Fluent"
-
-    Interests:
-      - name: Physics
-        icon: fa-solid fa-tag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Certificates:
-      - name: Machine Learning
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-location-dot
-
-      - name: Quantum Computing
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-tag
-
-      - name: Quantum Information
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-envelope
-
-    Projects:
-      - name: Quantum Computing
-        summary: Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.
+          - >
+            Designed and programmed a genome simulation algorithm 
+            as part of the novel genomic toolkit (Gonomics) using Golang.
+          - >
+            The program simulates genetic sequences from populations under 
+            the Wright-Fisher model with adjustable (1) population size, 
+            (2) number of generations, (3) mutation rate & (4) selection coefficient. 
+            The simulation extends beyond the Wright-Fisher model’s infinite-site assumption, 
+            allowing back mutation and multiallelic polymorphism in the simulated sequences.
+      - company: Jenny Tung Lab
+        position: Rotation Graduate Researcher
+        start_date: 2021-11
+        end_date: 2021-12
+        location: Duke University
         highlights:
-          - Quantum Teleportation
-          - Quantum Cryptography
-        start_date: 2018-01-01
-        end_date: 2018-01-01
+          - >
+            Built a linear mixed-effect regression model for studying 
+            the effects of energy expenditure (3-dimensional motionmeasured by accelerometers) 
+            on gene expression (bulk RNAseq data) in Kalahari meerkats. 
+            The model included random effects from kinship coefficients from known pedigrees.
+      - company: Mohamed Noor Lab
+        position: Rotation Graduate Researcher
+        start_date: 2021-09
+        end_date: 2021-10
+        location: Duke University
+        highlights:
+          - >
+            Implemented the GATK best practice pipeline to 
+            prepare and analyze sequencing data generated from Drosophila melanogaster.
+    Undergraduate Research Experience:  
+      - company: Emilia Huerta-Sanchez lab
+        position: Undergraduate Research Assistant
+        date:
+        start_date: 2020-06
+        end_date: 2021-05
+        location: Brown University
+        highlights:
+          - >
+            Detected signals of adaptive introgression in MUC19, a gene encoding a 
+            gel-forming mucin protein, from Denisovans in admixed American populations.
+          - >
+            Assisted in the identification of Native American and European 
+            ancestries in the American populations from the 1000 Genomes Project.
+          - >
+            Calculated genetic distances between haplotypes from Native American 
+            ancestries in comparison to the Denisovan haplotype using the program Haplostrips.
+          - >
+            Constructed and analyzed the Principal Components (PCA) of genetic distances 
+            among the admixed American populations.
+          -  >
+            Designed, built, and maintained the Huerta-Sanchez laboratory website on 
+            Weebly platform, created illustrations of the research topics page on the lab website.
+      - company: Laboratory of Animal Cytogenetics and Comparative Genomics (ACCG)
+        position: Undergraduate Research Assistant
+        start_date: 2019-06
+        end_date: 2019-07
+        location: Kasetsart University, Bangkok, Thailand
+        highlights:
+          - >
+            Conducted and assisted conservation studies of vertebrate species 
+            from different zoos in Thailand
+          - >
+            Performed DNA extraction and Polymerase Chain Reaction (PCR) 
+            from blood samples collected from the zoos (Bats and Macaques)
+          - >
+            Utilized various molecular biology techniques to study the genetic diversity 
+            and structure of Lyle’s Flying Foxes (Pteropus lylei ) in Thailand
+          - >
+            Collected bone marrow tissue from amphibian specimens for Fluorescence 
+            in situ Hybridization (FISH) in cytogenetic studies
+          -  >
+            Assisted in FISH to examine sex determination patterns in the amphibian species
+          - >
+            Facilitated the Thai-English translations of scientific manuscripts and grant proposals
+    Teaching Experience:
+      - name: "BIO202: Intro to Genetics and Evolution"
+        summary: Graduate Teaching Assistant
+        date: Fall semesters 2025 & 2026
+        location: Duke University
+        highlights:
+          - Independently supervised and taught weekly lab sections.
+          - >
+            Assisted students in understanding genetics and evolutionary concepts 
+            during office hours and exam reviews.
+          - Engaged in and lead Canvas discussions on genetics and evolution in the news.
+          - Graded weekly lab assignments.
+      - name: Science Day
+        summary: Guest Instructor
+        date: March 2025
+        location: Creech Road Elementary, Clayton, NC
+        highlights:
+          - Conducted a hands-on lesson on using Monster Maker game and candy DNA exercise for fifth graders at Creech Road Elementary School.
+      - name: Intro to Data Analysis
+        summary: Instructor
+        date: January 2025
+        location: North Carolina School of Science and Mathematics (NCSSM)
+        highlights:
+          - Instructed an introduction to data analysis using R to the high-school students during their January Term at the North Carolina School of Science and Mathematics (NCSSM). Experience shared on LinkedIn.
+          - Led a poster design session where students designed posters for presenting their January Term research findings.
+          - >
+            Selected testimonies:
+            * "Goated lesson. Very engaging and helpful, like the flexibility, energy, and analogy explanations."
+            * "Loved the class! Really helped me get a better grasp on programming with R..."
+      - name: Bioinformatics Bootcamp
+        summary: Instructor
+        date: Summers 2022-2024
+        location: Duke University
+        highlights:
+          - >
+            Designed and instructed various bioinformatics lessons for the incoming PhD students in the Genetics and Genomics program:
+            * 2024 lesson: Data Exploration and Cleanup in R.
+            * 2023 lessons: Introduction to Programming Using Python & Data Exploration Using Jupyter Notebook.
+            * 2022 lesson: Introduction to Unix and Command Line.
+          - Adapted and maintained the Bootcamp website via GitHub.
+      - name: "Genetics"
+        summary: Undergraduate Teaching Assistant
+        date: Falls 2018 & 2019
+        location: Brown University
+        highlights:
+          - Held office hours for weekly assignments, taught in review sections for exams, graded the weekly assignments.
+    Leadership Experience:
+      - name: "Committee of Alumni, Marketing, and PR (cAMP)"
+        summary: Co-Chair
+        start_date: 2024-10
+        end_date: 2026-05
+        location: Duke University
+        highlights:
+          - Lead a committee focusing on building the UPGG alumni network on LinkedIn, creating and maintaining positive public image for the students in the program, and engage the student body with the broader scientific community on social media.
+      - name: "Distinguished Lecture Series Committee"
+        summary: Co-Chair
+        start_date: 2022-10
+        end_date: 2025-01
+        location: Duke University
+        highlights:
+          - Organized the Distinguished Lecture Series in which we invite distinguished scientists who have made notable contributions to their fields and are great mentors and communicators.
+    Talks, Conferences, and Workshops:
+      - name: "ComSciCon-Triangle Workshop"
+        summary: Participant
+        date: January 2026
+        location: Durham, NC
+        highlights:
+          - Participated in a Write-A-Thon which involved writing a science news article covering interesting recent scientific finding (in-progress).
+          - Gave a one-minute, impromptu pop talk about my research (video uploaded on YouTube).
+          - Engaged with a panel of science writing experts on topics including how to write a science article, use effective visual storytelling, and more. Experience shared on LinkedIn.
+      - name: "American Society of Human Genetics (ASHG) Annual Meeting"
+        date: November 2025
+        location: Boston, MA
+      - name: "Science Talk '25"
+        summary: Participant
+        date: April 2025
+        location: Raleigh, NC
+        highlights:
+          - Participated in three-day conference on various topics on science communications.
+      - name: "Alan Alda Center for Communicating Science Workshop"
+        summary: Participant
+        date: January 2025
+        location: Durham, NC
+        highlights:
+          - Engaged in two-day hands-on science communication workshop using improvisational techniques based on the Alda Method. Experience shared on LinkedIn.
+      - name: "ComSciCon-Triangle Workshop"
+        summary: Participant
+        date: January 2025
+        location: Chapel Hill, NC
+        highlights:
+          - Participated in a Write-A-Thon which involved writing a science news article covering interesting recent scientific finding (in-progress).
+          - Gave a one-minute, impromptu pop talk about my research (video uploaded on YouTube).
+          - Engaged with a panel of science writing experts on topics including how to write a science article, use effective visual storytelling, and more. Experience shared on LinkedIn.
+      - name: "American Society of Human Genetics (ASHG) Annual Meeting"
+        summary: Poster Presentation
+        date: November 2024
+        location: Denver, CO
+        highlights:
+          - "Poster presentation: Evaluation of imputation methods for ancient African DNA."
+      - name: "GradX Talk"
+        summary: Speaker
+        date: March 2024
+        location: Duke University
+        highlights:
+          - "A 5-minute talk titled: How population genetics helps inform us of how we became who we are to general audience."
+      - name: "American Society of Human Genetics (ASHG) Annual Meeting"
+        summary: Poster Presentation
+        date: November 2023
+        location: Washington, D.C.
+        highlights:
+          - "Poster presentation: Single-locus imputation of ancient African DNA using novel regression-based approach."
+      - name: "Communicate Your Science through Short Video Workshop"
+        summary: Participant
+        date: August 2023
+        location: Duke University
+        highlights:
+          - Wrote, filmed, and edited a science communication short video (YouTube or LinkedIn).
+      - name: "Society for Molecular Biology & Evolution (SMBE) Annual Meeting"
+        summary: Remote Attendee
+        date: July 2023
+        location: Remote Attendance
+        highlights:
+      - name: "AGAR Workshop on Computational Genetics"
+        summary: Participant
+        date: July 2022
+        location: Remote Attendance
+        highlights:
+          - Hands-on workshop on Snakemake, Msprime, Admixtools & Legofit.
+      - name: "Science at the Intersection of Genetics, Identity, and Health Workshop"
+        summary: Participant
+        date: November 2022
+        location: Duke University
+        highlights:
+          - Discussed the current topics on science of human genetics and how their implications on identity and health.
+      - name: "Adaptation in Structured Population Workshop"
+        summary: Participant
+        date: June 2023
+        location: Remote Attendance
+        highlights:
+    Scholarships and Honors:
+      - name: "Associate Membership"
+        summary: Sigma Xi The Scientific Research Honor Society
+        date: 2025 – present
+        location: Research Triangle Park, NC
+        highlights:
+      - name: "Royal Thai Government Scholarship"
+        summary: Office of Educational Affairs, Royal Thai Embassy
+        date: 2016 – 2021
+        location: Washington, D.C.
+        highlights:
+      - name: "Silver Medal"
+        summary: International Biology Olympiad (IBO)
+        date: 2015
+        location: Aarhus, Denmark
+        highlights:
+    skills:
+      - label: General
+        details: High-performance computing clusters, Graphic design, video editing, public speaking
+      - label: Languages
+        details: Thai, English
+      - label: Programming
+        details: R, Python, Shell, Golang, Java
+      - label: Software
+        details: Plink, Bcftools, GLIMPSE, ADMIXTURE, Minimac, Beagle, Snakemake, Admixtools, SLiM, Msprime, GATK & Haplostrips.
 
-    References:
-      - name: Professor John Doe
-        icon: fa-solid fa-laptop
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
-
-      - name: Professor Jane Smith
-        icon: fa-solid fa-thumbtack
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+design:
+  theme: harvard
+  # page:
+  #   size: us-letter
+  #   top_margin: 0.5in
+  #   bottom_margin: 0.5in
+  #   left_margin: 0.5in
+  #   right_margin: 0.5in
+  #   show_footer: true
+  #   show_top_note: false
+  # colors:
+  #   body: rgb(0, 0, 0)
+  #   name: rgb(0, 0, 0)
+  #   headline: rgb(0, 0, 0)
+  #   connections: rgb(0, 0, 0)
+  #   section_titles: rgb(0, 0, 0)
+  #   links: rgb(0, 0, 0)
+  #   footer: rgb(128, 128, 128)
+  #   top_note: rgb(128, 128, 128)
+  # typography:
+  #   line_spacing: 0.6em
+  #   alignment: justified
+  #   date_and_location_column_alignment: right
+  #   font_family:
+  #     body: XCharter
+  #     name: XCharter
+  #     headline: XCharter
+  #     connections: XCharter
+  #     section_titles: XCharter
+  #   font_size:
+  #     body: 10pt
+  #     name: 25pt
+  #     headline: 10pt
+  #     connections: 9pt
+  #     section_titles: 1.3em
+  #   small_caps:
+  #     name: false
+  #     headline: false
+  #     connections: false
+  #     section_titles: false
+  #   bold:
+  #     name: true
+  #     headline: false
+  #     connections: false
+  #     section_titles: true
+  # links:
+  #   underline: false
+  #   show_external_link_icon: false
+  # header:
+  #   alignment: center
+  #   photo_width: 3.5cm
+  #   photo_position: left
+  #   photo_space_left: 0.4cm
+  #   photo_space_right: 0.4cm
+  #   space_below_name: 0.5cm
+  #   space_below_headline: 0.5cm
+  #   space_below_connections: 0.5cm
+  #   connections:
+  #     phone_number_format: national
+  #     hyperlink: true
+  #     show_icons: false
+  #     display_urls_instead_of_usernames: false
+  #     separator: •
+  #     space_between_connections: 0.4cm
+  # section_titles:
+  #   type: centered_with_centered_partial_line
+  #   line_thickness: 0.5pt
+  #   space_above: 0.5cm
+  #   space_below: 0.2cm
+  # sections:
+  #   allow_page_break: true
+  #   space_between_regular_entries: 1em
+  #   space_between_text_based_entries: 0.3em
+  #   show_time_spans_in: []
+  # entries:
+  #   date_and_location_width: 4.15cm
+  #   side_space: 0.2cm
+  #   space_between_columns: 0.1cm
+  #   allow_page_break: false
+  #   short_second_row: false
+  #   degree_width: 1cm
+  #   summary:
+  #     space_above: 0cm
+  #     space_left: 0cm
+  #   highlights:
+  #     bullet: •
+  #     nested_bullet: •
+  #     space_left: 0.15cm
+  #     space_above: 0cm
+  #     space_between_items: 0cm
+  #     space_between_bullet_and_text: 0.5em
+  # templates:
+  #   footer: '*NAME -- PAGE_NUMBER/TOTAL_PAGES*'
+  #   top_note: '*LAST_UPDATED CURRENT_DATE*'
+  #   single_date: MONTH_ABBREVIATION YEAR
+  #   date_range: START_DATE – END_DATE
+  #   time_span: ''
+  #   one_line_entry:
+  #     main_column: '**LABEL:** DETAILS'
+  #   education_entry:
+  #     main_column: |-
+  #       **INSTITUTION**, DEGREE_WITH_AREA -- LOCATION
+  #       SUMMARY
+  #       HIGHLIGHTS
+  #     degree_column: '**DEGREE**'
+  #     date_and_location_column: DATE
+  #   normal_entry:
+  #     main_column: |-
+  #       **NAME** -- **LOCATION**
+  #       SUMMARY
+  #       HIGHLIGHTS
+  #     date_and_location_column: DATE
+  #   experience_entry:
+  #     main_column: |-
+  #       **COMPANY**, POSITION -- LOCATION
+  #       SUMMARY
+  #       HIGHLIGHTS
+  #     date_and_location_column: DATE
+  #   publication_entry:
+  #     main_column: |-
+  #       **TITLE**
+  #       SUMMARY
+  #       AUTHORS
+  #       URL (JOURNAL)
+  #     date_and_location_column: DATE
+locale:
+  language: english
+  # last_updated: Last updated in
+  # month: month
+  # months: months
+  # year: year
+  # years: years
+  # present: present
+  # phrases:
+  #   degree_with_area: DEGREE in AREA
+  # month_abbreviations:
+  #   - Jan
+  #   - Feb
+  #   - Mar
+  #   - Apr
+  #   - May
+  #   - June
+  #   - July
+  #   - Aug
+  #   - Sept
+  #   - Oct
+  #   - Nov
+  #   - Dec
+  # month_names:
+  #   - January
+  #   - February
+  #   - March
+  #   - April
+  #   - May
+  #   - June
+  #   - July
+  #   - August
+  #   - September
+  #   - October
+  #   - November
+  #   - December
+settings:
+  current_date: today
+  render_command:
+    output_folder: rendercv_output
+    design:
+    locale:
+    typst_path: OUTPUT_FOLDER/NAME_IN_SNAKE_CASE_CV.typ
+    pdf_path: OUTPUT_FOLDER/NAME_IN_SNAKE_CASE_CV.pdf
+    markdown_path: OUTPUT_FOLDER/NAME_IN_SNAKE_CASE_CV.md
+    html_path: OUTPUT_FOLDER/NAME_IN_SNAKE_CASE_CV.html
+    png_path: OUTPUT_FOLDER/NAME_IN_SNAKE_CASE_CV.png
+    dont_generate_markdown: false
+    dont_generate_html: false
+    dont_generate_typst: false
+    dont_generate_pdf: false
+    dont_generate_png: false
+  bold_keywords: []
+  pdf_title: NAME - CV
