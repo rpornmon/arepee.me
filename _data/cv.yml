@@ -6,13 +6,13 @@ cv:
   email: rp280@duke.edu
   website: http://www.arepee.me
   sections:
-    Summary: 
+    summary:
       - > 
         A Ph.D. candidate in population genetics with a natural curiosity 
         about human adaptations, a strong foundation in statistical and computational 
         approaches, and a deep passion for engaging non-scientific audiences through 
         multimedia storytelling.
-    Education:
+    education:
       - institution: Duke University
         area: Genetics and Genomics
         degree: PhD
@@ -31,7 +31,7 @@ cv:
         location: Providence, RI
         summary:
         highlights:
-    Graduate Research Experience:
+    graduate research experience:
       - company: Alejandro Ochoa Lab
         position: Graduate Researcher
         start_date: 2022-05
@@ -103,7 +103,7 @@ cv:
           - >
             Implemented the GATK best practice pipeline to 
             prepare and analyze sequencing data generated from Drosophila melanogaster.
-    Undergraduate Research Experience:  
+    undergraduate research experience:  
       - company: Emilia Huerta-Sanchez lab
         position: Undergraduate Research Assistant
         date:
@@ -148,7 +148,7 @@ cv:
             Assisted in FISH to examine sex determination patterns in the amphibian species
           - >
             Facilitated the Thai-English translations of scientific manuscripts and grant proposals
-    Teaching Experience:
+    teaching experience:
       - name: "BIO202: Intro to Genetics and Evolution"
         summary: Graduate Teaching Assistant
         date: Fall semesters 2025 & 2026
@@ -194,7 +194,7 @@ cv:
         location: Brown University
         highlights:
           - Held office hours for weekly assignments, taught in review sections for exams, graded the weekly assignments.
-    Leadership Experience:
+    leadership experience:
       - name: "Committee of Alumni, Marketing, and PR (cAMP)"
         summary: Co-Chair
         start_date: 2024-10
@@ -209,7 +209,7 @@ cv:
         location: Duke University
         highlights:
           - Organized the Distinguished Lecture Series in which we invite distinguished scientists who have made notable contributions to their fields and are great mentors and communicators.
-    Talks, Conferences, and Workshops:
+    talks, conferences, and workshops:
       - name: "ComSciCon-Triangle Workshop"
         summary: Participant
         date: January 2026
@@ -287,7 +287,7 @@ cv:
         date: June 2023
         location: Remote Attendance
         highlights:
-    Scholarships and Honors:
+    scholarships and honors:
       - name: "Associate Membership"
         summary: Sigma Xi The Scientific Research Honor Society
         date: 2025 – present
@@ -312,6 +312,14 @@ cv:
         details: R, Python, Shell, Golang, Java
       - label: Software
         details: Plink, Bcftools, GLIMPSE, ADMIXTURE, Minimac, Beagle, Snakemake, Admixtools, SLiM, Msprime, GATK & Haplostrips.
+    references:
+      - name: Professor John Doe
+        icon: fa-solid fa-laptop
+        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+
+      - name: Professor Jane Smith
+        icon: fa-solid fa-thumbtack
+        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
 
 design:
   theme: harvard
