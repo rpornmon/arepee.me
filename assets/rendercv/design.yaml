@@ -2,6 +2,8 @@
 design:
   theme: harvard
   page:
-    size: a4
+    size: letter
     show_footer: false
     show_top_note: false
+  colors:
+    section_titles: rgb(0, 79, 144)
