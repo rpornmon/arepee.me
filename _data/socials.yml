@@ -5,7 +5,7 @@ linktree:
   url: https://linktr.ee/arepee
   title: linktree
   logo: fa-brands fa-linktree
-cv_pdf: /assets/pdf/example_pdf.pdf # path to your CV PDF file
+cv_pdf: /assets/rendercv/rendercv_output/RP_Pornmongkolsuk_CV.pdf # path to your CV PDF file
 email: rp280@duke.edu # your email address
 linkedin_username: rpornmon
 letterboxd_id: R2_P2
