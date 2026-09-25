@@ -1,4 +1,443 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://www.arepee.me/feed.xml" rel="self" type="application/atom+xml"/><link href="https://www.arepee.me/" rel="alternate" type="text/html" hreflang="en"/><updated>2026-09-25T00:21:40+00:00</updated><id>https://www.arepee.me/feed.xml</id><title type="html">blank</title><entry><title type="html">On the Degrees of Freedom</title><link href="https://www.arepee.me/blog/2026/degrees_of_freedom/" rel="alternate" type="text/html" title="On the Degrees of Freedom"/><published>2026-09-14T00:00:00+00:00</published><updated>2026-09-14T00:00:00+00:00</updated><id>https://www.arepee.me/blog/2026/degrees_of_freedom</id><content type="html" xml:base="https://www.arepee.me/blog/2026/degrees_of_freedom/"><![CDATA[<h4 id="intution-for-degrees-of-freedom">Intution for Degrees of Freedom</h4> <p>In biostatistics, the concept of the <a href="https://en.wikipedia.org/wiki/Degrees_of_freedom_(statistics)">degrees of freedom (df)</a> comes up often and is frequently misunderstood, or at least only partially understood. As a student, you may resort to <em>memorization</em> on a case-by-case basis when df comes up in biology classes. Well, so did I. Notably, the equation is <code class="language-plaintext highlighter-rouge">df = N-1</code>, when <code class="language-plaintext highlighter-rouge">N</code> is the number of classes of data.</p> <p>To wrap your head around the idea of df, let’s imagine that you’re a coach for a soccer team. <i class="fa-solid fa-futbol"></i></p> <p>You have <code class="language-plaintext highlighter-rouge">11</code> players to fit <code class="language-plaintext highlighter-rouge">11</code> positions on the field. You may assign any player to any position you want, but once you’ve assigned <code class="language-plaintext highlighter-rouge">10</code> out of <code class="language-plaintext highlighter-rouge">11</code> players, you no longer have the choice to assign the last player as you desire. The player would have to play whichever the last position that’s left open. So, the number of degrees of freedom that you have is <code class="language-plaintext highlighter-rouge">11 - 1 = 10</code>. However, <em>picking the right <code class="language-plaintext highlighter-rouge">N</code> can be tricky</em>.</p> <p>Say, you’re interested in investigating the sources of daily caffeine—<code class="language-plaintext highlighter-rouge">coffee</code>, <code class="language-plaintext highlighter-rouge">tea</code>, <code class="language-plaintext highlighter-rouge">soda</code>, and <code class="language-plaintext highlighter-rouge">energy drinks</code>—for average Americans.</p> <div class="text-center"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/degrees_of_freedom/coffee-beans-480.webp 480w,/assets/img/degrees_of_freedom/coffee-beans-800.webp 800w,/assets/img/degrees_of_freedom/coffee-beans-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/degrees_of_freedom/coffee-beans.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" style=" max-height: 250px; " loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"/> </picture> </figure> </div> <div class="caption"> What's your choice for caffeine? Or you may not need caffeine at all! </div> <p>However, your research collaborator gave your the data, they were tabulated with brand choices for soda as well. Knowing whether the soda brand choice was a Coca-Cola or Dr. Pepper isn’t more or less helpful for the question you’re investigating, which only concerns the types of the drinks. So, the relevant level of <em>freedom</em> for this particular question for this particular set of data is within the constraint of caffeine sources, and not brands. So, you may use the number of degrees of freedom to be <code class="language-plaintext highlighter-rouge">4 - 1 = 3</code>.</p> <p>The key takeaway is that <strong>the degrees of freedom depend on both the data AND the question</strong> that’s being asked. Same data but different question may have different degrees of freedom in your analysis.</p> <h4 id="lenticular-coin-flips-a-chi-square-case-study">Lenticular Coin Flips: a Chi-Square Case-Study</h4> <p>On your last birthday, your parent surprised you with an amazing present, a collectible <a href="https://en.wikipedia.org/wiki/Lenticular_printing">lenticular</a> coin you’d been asking for. It is special, because depending on the angle you’re looking at the coin, the engraving may appear as a <code class="language-plaintext highlighter-rouge">dragon</code> or a <code class="language-plaintext highlighter-rouge">monkey</code>.</p> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/degrees_of_freedom/dragon-head-480.webp 480w,/assets/img/degrees_of_freedom/dragon-head-800.webp 800w,/assets/img/degrees_of_freedom/dragon-head-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/degrees_of_freedom/dragon-head.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" style=" max-height: 200px; " loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"/> </picture> <figcaption class="caption">dragon heads</figcaption> </figure> </div> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/degrees_of_freedom/dragon-tail-480.webp 480w,/assets/img/degrees_of_freedom/dragon-tail-800.webp 800w,/assets/img/degrees_of_freedom/dragon-tail-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/degrees_of_freedom/dragon-tail.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" style=" max-height: 200px; " loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"/> </picture> <figcaption class="caption">dragon tails</figcaption> </figure> </div> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/degrees_of_freedom/monkey-head-480.webp 480w,/assets/img/degrees_of_freedom/monkey-head-800.webp 800w,/assets/img/degrees_of_freedom/monkey-head-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/degrees_of_freedom/monkey-head.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" style=" max-height: 200px; " loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"/> </picture> <figcaption class="caption">monkey heads</figcaption> </figure> </div> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/degrees_of_freedom/monkey-tail-480.webp 480w,/assets/img/degrees_of_freedom/monkey-tail-800.webp 800w,/assets/img/degrees_of_freedom/monkey-tail-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/degrees_of_freedom/monkey-tail.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" style=" max-height: 200px; " loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"/> </picture> <figcaption class="caption">monkey tails</figcaption> </figure> </div> </div> <p>Now, your friend had asked you to referee a soccer game, you need to coin flip to decide who gets the kickoff. Naturally, you’d like to use your newly minted dragon-monkey coin, but you aren’t sure if the coin was even <em>fair</em>.</p> <p>You set out to investigate if your gifted coin has the same chances of the coin landing <code class="language-plaintext highlighter-rouge">heads</code> as <code class="language-plaintext highlighter-rouge">tails</code> by tossing the coin <code class="language-plaintext highlighter-rouge">1000</code> times and conducting a Chi-square test. You write down all your observations. The coin still has <code class="language-plaintext highlighter-rouge">heads</code> and <code class="language-plaintext highlighter-rouge">tails</code> like any other coin; however, because the orientation in which the coin lands is random, when it lands a <code class="language-plaintext highlighter-rouge">heads</code>, about <em>50%</em> of the times you’d see a head of a <code class="language-plaintext highlighter-rouge">dragon</code>. The other <em>50%</em> of the times, you’d see a head of a <code class="language-plaintext highlighter-rouge">monkey</code>. The <code class="language-plaintext highlighter-rouge">heads</code> and <code class="language-plaintext highlighter-rouge">tails</code> results are independently of whether you’re looking at a <code class="language-plaintext highlighter-rouge">dragon</code> or a <code class="language-plaintext highlighter-rouge">monkey</code>.</p> <p><br/></p> <div class="row mt-3"> <table> <thead> <tr> <th align="left">coin toss results</th> <th align="right">count</th> </tr> </thead> <tbody> <tr> <td valign="middle"> <img src="/assets/img/degrees_of_freedom/dragon-head.png" width="50" style="vertical-align: middle;"/> dragon heads </td> <td valign="middle">119</td> </tr> <tr> <td valign="middle"> <img src="/assets/img/degrees_of_freedom/dragon-tail.png" width="50" style="vertical-align: middle;"/> dragon tails </td> <td valign="middle">370</td> </tr> <tr> <td valign="middle"> <img src="/assets/img/degrees_of_freedom/monkey-head.png" width="50" style="vertical-align: middle;"/> monkey heads </td> <td valign="middle">135</td> </tr> <tr> <td valign="middle"> <img src="/assets/img/degrees_of_freedom/monkey-tail.png" width="50" style="vertical-align: middle;"/> monkey tails </td> <td valign="middle">376</td> </tr> </tbody> <caption style="caption-side:bottom">1000 coin toss results</caption> </table> </div> <p><br/></p> <p>You finally have all the information you need to conduct a Chi-square test of your own. However, you remember that you’re only testing to see if this coin is <em>fair</em>, which has nothing to do with whether you’re observing a <code class="language-plaintext highlighter-rouge">dragon</code> or a <code class="language-plaintext highlighter-rouge">monkey</code> engraving. Therefore, whether you see a <code class="language-plaintext highlighter-rouge">dragon</code> or a <code class="language-plaintext highlighter-rouge">monkey</code> head engraving, you can lump both of them together as the times that the coin lands <code class="language-plaintext highlighter-rouge">heads</code>. Same for <code class="language-plaintext highlighter-rouge">tails</code>.</p> <p><br/></p> <div class="row mt-3"> <table> <thead> <tr> <th>coin flip results</th> <th>counts</th> </tr> </thead> <tbody> <tr> <td>combined heads</td> <td>119 + 135 = 254</td> </tr> <tr> <td>combined tails</td> <td>370 + 376 = 746</td> </tr> <tr> <td>total</td> <td>254 + 746 = 1000</td> </tr> </tbody> <caption style="caption-side:bottom">1000 coin toss combined results</caption> </table> </div> <p><br/></p> <p>It’s probably quite obvious now that the coin is <em>NOT fair</em>, but you calculate the Chi-square test nonetheless.</p> <p><br/></p> <div class="row mt-3"> <table> <thead> <tr> <th>classes</th> <th>observed</th> <th>expected</th> <th>$(O-E)$</th> <th>$(O-E)^2$</th> <th>$\frac{(O-E)^2}{E}$</th> </tr> </thead> <tbody> <tr> <td>heads</td> <td>254</td> <td>500</td> <td>254 - 500 = -246</td> <td>60516</td> <td>121.03</td> </tr> <tr> <td>tails</td> <td>746</td> <td>500</td> <td>746 - 500 = 246</td> <td>60516</td> <td>121.03</td> </tr> </tbody> <caption style="caption-side:bottom">Chi-square calculation</caption> </table> </div> <p><br/></p> <p>Therefore, our Chi-square value is <code class="language-plaintext highlighter-rouge">242.06</code>! And what should the degrees of freedom be? Since there are only two classes, <code class="language-plaintext highlighter-rouge">heads</code> or <code class="language-plaintext highlighter-rouge">tails</code>, the degrees of freedom is <code class="language-plaintext highlighter-rouge">2 - 1 = 1</code>! At <code class="language-plaintext highlighter-rouge">p = 0.05</code>, the Chi-square threshold is <code class="language-plaintext highlighter-rouge">3.841</code>.</p> <p>Our calculated Chi-square value for this coin is <em>WAY HIGHER</em> than the threshold. So we can <em>reject</em> our null hypothesis that this coin is <em>fair</em>!! It looks like you’re going to have to bring another coin to your friend’s soccer game.</p> <p><em>Can you spot the connection between this example and testing for independent assortment using a test cross?</em></p> <h4 id="testcross-application">Testcross Application</h4> <p>In a sexually-reproducing, diploid organism, let’s set up a testcross for <code class="language-plaintext highlighter-rouge">1000</code> offspring (see diagram below) and to test for <code class="language-plaintext highlighter-rouge">independent assortment</code>—<em>meaning the chances that a meiotic gamete receives <code class="language-plaintext highlighter-rouge">parental</code> vs <code class="language-plaintext highlighter-rouge">recombinant</code> pairs of A and B allele are equal</em>.</p> <div class="text-center"> <script type="text/tikz">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://www.arepee.me/feed.xml" rel="self" type="application/atom+xml"/><link href="https://www.arepee.me/" rel="alternate" type="text/html" hreflang="en"/><updated>2026-09-25T19:52:32+00:00</updated><id>https://www.arepee.me/feed.xml</id><title type="html">blank</title><entry><title type="html">Cell Division Exercises</title><link href="https://www.arepee.me/blog/2026/cell_division/" rel="alternate" type="text/html" title="Cell Division Exercises"/><published>2026-09-20T00:00:00+00:00</published><updated>2026-09-20T00:00:00+00:00</updated><id>https://www.arepee.me/blog/2026/cell_division</id><content type="html" xml:base="https://www.arepee.me/blog/2026/cell_division/"><![CDATA[<p>It can be confusing to keep track of the genetic materials through different stages of cell divisions, since they are packed into slightly different units. I think working through the numbers of chromosomes and chromatids through mitotic and meiotic phases can be a good exercise to understand the distinctions between different levels of building blocks of DNA.</p> <p>Fill in the table, and the chart below should update and visualize in real-time!</p> <div class="cc-wrapper"> <style>
+    .cc-wrapper {
+      font-family: inherit;
+      color: inherit;
+      margin: 2rem 0;
+      width: 100%;
+    }
+    .cc-wrapper table {
+      width: 100% !important;
+      border-collapse: collapse !important;
+      margin-bottom: 1.5rem !important;
+      font-size: 0.9rem;
+    }
+    .cc-wrapper th, .cc-wrapper td {
+      padding: 8px 10px !important;
+      text-align: center;
+      border-bottom: 1px solid var(--global-divider-color);
+    }
+    .cc-wrapper th{
+      color: var(--global-2nd-color);
+    }
+    .cc-wrapper th:first-child, .cc-wrapper td:first-child {
+      text-align: left !important;
+    }
+    .cc-wrapper .cc-group-row td {
+      font-weight: bold;
+      background-color: var(--global-bg-color-2, rgba(0,0,0,0.03));
+      text-align: left !important;
+    }
+    .cc-wrapper input[type="number"] {
+      width: 65px !important;
+      max-width: 100% !important;
+      padding: 4px 6px !important;
+      text-align: center;
+      border: 1px solid var(--global-divider-color);
+      border-radius: 4px;
+      background: var(--global-bg-color);
+      color: var(--global-text-color);
+      box-sizing: border-box;
+    }
+    .cc-chart-container {
+      position: relative;
+      width: 100%;
+      height: 320px;
+      max-height: 400px;
+      margin-top: 1rem;
+    }
+  </style> <h1>Mitosis</h1> <div class="cc-btn-group"> <button type="button" id="cc-btn-preset" class="cc-btn">Load Human Somatic (2n = 46)</button> <button type="button" id="cc-btn-clear" class="cc-btn">Clear Table</button> <button type="button" id="cc-btn-save" class="cc-btn">📥 Save Chart Image</button> </div> <div style="overflow-x: auto;"> <table id="cc-table"> <thead> <tr> <th style="text-align:left;">Stage</th> <th># Chromosomes</th> <th># Chromatids</th> <th># Centromeres</th> <th># DNA Molecules</th> </tr> </thead> <tbody> <tr class="cc-group-row"> <td colspan="5" style="color: var(--global-3rd-color)">Interphase</td> </tr> <tr> <td class="cc-stage">G1</td> <td><input type="number" min="0" data-row="G1" data-field="chrom"/></td> <td><input type="number" min="0" data-row="G1" data-field="chromatid"/></td> <td><input type="number" min="0" data-row="G1" data-field="centromere"/></td> <td><input type="number" min="0" data-row="G1" data-field="dna"/></td> </tr> <tr> <td class="cc-stage">G2</td> <td><input type="number" min="0" data-row="G2" data-field="chrom"/></td> <td><input type="number" min="0" data-row="G2" data-field="chromatid"/></td> <td><input type="number" min="0" data-row="G2" data-field="centromere"/></td> <td><input type="number" min="0" data-row="G2" data-field="dna"/></td> </tr> <tr class="cc-group-row"> <td colspan="5" style="color: var(--global-3rd-color)">Mitosis</td> </tr> <tr> <td class="cc-stage">Prophase</td> <td><input type="number" min="0" data-row="pro" data-field="chrom"/></td> <td><input type="number" min="0" data-row="pro" data-field="chromatid"/></td> <td><input type="number" min="0" data-row="pro" data-field="centromere"/></td> <td><input type="number" min="0" data-row="pro" data-field="dna"/></td> </tr> <tr> <td class="cc-stage">Metaphase</td> <td><input type="number" min="0" data-row="meta" data-field="chrom"/></td> <td><input type="number" min="0" data-row="meta" data-field="chromatid"/></td> <td><input type="number" min="0" data-row="meta" data-field="centromere"/></td> <td><input type="number" min="0" data-row="meta" data-field="dna"/></td> </tr> <tr> <td class="cc-stage">Anaphase</td> <td><input type="number" min="0" data-row="ana" data-field="chrom"/></td> <td><input type="number" min="0" data-row="ana" data-field="chromatid"/></td> <td><input type="number" min="0" data-row="ana" data-field="centromere"/></td> <td><input type="number" min="0" data-row="ana" data-field="dna"/></td> </tr> <tr> <td class="cc-stage">Telophase</td> <td><input type="number" min="0" data-row="telo" data-field="chrom"/></td> <td><input type="number" min="0" data-row="telo" data-field="chromatid"/></td> <td><input type="number" min="0" data-row="telo" data-field="centromere"/></td> <td><input type="number" min="0" data-row="telo" data-field="dna"/></td> </tr> <tr class="cc-group-row"> <td colspan="5" style="color: var(--global-3rd-color)">Post-Cytokinesis</td> </tr> <tr> <td class="cc-stage">Daughter Cell</td> <td><input type="number" min="0" data-row="mit-inter" data-field="chrom"/></td> <td><input type="number" min="0" data-row="mit-inter" data-field="chromatid"/></td> <td><input type="number" min="0" data-row="mit-inter" data-field="centromere"/></td> <td><input type="number" min="0" data-row="mit-inter" data-field="dna"/></td> </tr> </tbody> </table> </div> <caption><h4 style="text-align: center">Genetic materials overtime in mitosis</h4></caption> <div class="cc-chart-container"> <canvas id="ccLineChart"></canvas> </div> <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script> <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const stages = ["G1", "G2", "Prophase", "Metaphase", "Anaphase", "Telophase", "Daughter"];
+      const rowKeys = ["G1", "G2", "pro", "meta", "ana", "telo", "mit-inter"];
+
+      // Distinct properties for each metric to handle overlapping values visually
+      const fields = [
+        { key: "chrom", label: "Chromosomes", color: "#2563eb", dash: [5,7], pointStyle: 'circle', radius: 3 },
+        { key: "chromatid", label: "Chromatids", color: "#16a34a", dash: [6, 6], pointStyle: 'triangle', radius: 6 },
+        { key: "centromere", label: "Centromeres", color: "#d97706", dash: [2, 2], pointStyle: 'rectRot', radius: 6 },
+        { key: "dna", label: "DNA Molecules", color: "#dc2626", dash: [10, 4], pointStyle: 'rect', radius: 5 }
+      ];
+
+      const humanPresetValues = {
+        "G1":       { chrom: 46, chromatid: 46, centromere: 46, dna: 46 },
+        "G2":       { chrom: 46, chromatid: 92, centromere: 46, dna: 92 },
+        "pro":      { chrom: 46, chromatid: 92, centromere: 46, dna: 92 },
+        "meta":     { chrom: 46, chromatid: 92, centromere: 46, dna: 92 },
+        "ana":      { chrom: 92, chromatid: 92, centromere: 92, dna: 92 },
+        "telo":     { chrom: 92, chromatid: 92, centromere: 92, dna: 92 },
+        "mit-inter":{ chrom: 46, chromatid: 46, centromere: 46, dna: 46 }
+      };
+
+      const ctx = document.getElementById("ccLineChart").getContext("2d");
+      
+      const datasets = fields.map(f => ({
+        label: f.label,
+        data: new Array(rowKeys.length).fill(null),
+        borderColor: f.color,
+        backgroundColor: f.color,
+        borderWidth: 2.5,
+        borderDash: f.dash,
+        pointStyle: f.pointStyle,
+        pointRadius: f.radius,
+        pointHoverRadius: 8,
+        tension: 0.1,
+        fill: false
+      }));
+
+      const chart = new Chart(ctx, {
+        type: 'line',
+        data: { labels: stages, datasets: datasets },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: {
+            mode: 'index',
+            intersect: false,
+          },
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: {
+                usePointStyle: true,
+                boxWidth: 8
+              }
+            },
+            tooltip: {
+              enabled: true,
+              callbacks: {
+                label: function(context) {
+                  let label = context.dataset.label || '';
+                  if (label) {
+                    label += ': ';
+                  }
+                  if (context.parsed.y !== null) {
+                    label += context.parsed.y;
+                  }
+                  return label;
+                }
+              }
+            },
+            annotation: {
+              annotations: {
+                dnaSynthesisLine: {
+                  type: 'line',
+                  xMin: 0.5,
+                  xMax: 0.5,
+                  borderColor: 'rgba(220, 38, 200, 0.5)',
+                  borderWidth: 2,
+                  borderDash: [4, 4],
+                  label: {
+                    display: true,
+                    content: 'DNA Synthesis',
+                    position: 'start',
+                    backgroundColor: 'rgba(220, 38, 200, 0.8)',
+                    font: { size: 10, weight: 'bold' },
+                    padding: 4
+                  }
+                },
+                cytokinesisLine: {
+                  type: 'line',
+                  xMin: 5.5,
+                  xMax: 5.5,
+                  borderColor: 'rgba(220, 38, 200, 0.5)',
+                  borderWidth: 2,
+                  borderDash: [4, 4],
+                  label: {
+                    display: true,
+                    content: 'Cytokinesis',
+                    position: 'start',
+                    backgroundColor: 'rgba(220, 38, 200, 0.8)',
+                    font: { size: 10, weight: 'bold' },
+                    padding: 4
+                  }
+                }
+              }
+            }
+          },
+          scales: {
+            y: { 
+              beginAtZero: true, 
+              ticks: { precision: 0 },
+              grid: { color: 'rgba(0, 0, 0, 0.05)' }
+            },
+            x: {
+              grid: { display: false }
+            }
+          }
+        }
+      });
+
+      function updateChartData() {
+        rowKeys.forEach((rowKey, rIndex) => {
+          fields.forEach((field, fIndex) => {
+            const input = document.querySelector(`.cc-wrapper input[data-row="${rowKey}"][data-field="${field.key}"]`);
+            const val = input && input.value !== "" ? parseFloat(input.value) : null;
+            chart.data.datasets[fIndex].data[rIndex] = val;
+          });
+        });
+        chart.update();
+      }
+
+      document.querySelectorAll('.cc-wrapper input[type="number"]').forEach(input => {
+        input.addEventListener('input', updateChartData);
+      });
+
+      document.getElementById('cc-btn-preset').addEventListener('click', function() {
+        rowKeys.forEach(rowKey => {
+          fields.forEach(field => {
+            const input = document.querySelector(`.cc-wrapper input[data-row="${rowKey}"][data-field="${field.key}"]`);
+            if (input) {
+              input.value = humanPresetValues[rowKey][field.key];
+            }
+          });
+        });
+        updateChartData();
+      });
+
+      document.getElementById('cc-btn-clear').addEventListener('click', function() {
+        document.querySelectorAll('.cc-wrapper input[type="number"]').forEach(input => {
+          input.value = '';
+        });
+        updateChartData();
+      });
+
+      // Export Chart as Image feature
+      document.getElementById('cc-btn-save').addEventListener('click', function() {
+        const link = document.createElement('a');
+        link.download = 'mitosis-chromosome-chart.png';
+        link.href = chart.toBase64Image();
+        link.click();
+      });
+    });
+  </script> </div> <hr/> <div class="meio-wrapper"> <style>
+    .meio-wrapper {
+      font-family: inherit;
+      color: inherit;
+      margin: 2rem 0;
+      width: 100%;
+    }
+    .meio-wrapper table {
+      width: 100% !important;
+      border-collapse: collapse !important;
+      margin-bottom: 1.5rem !important;
+      font-size: 0.9rem;
+    }
+    .meio-wrapper th, .meio-wrapper td {
+      padding: 8px 10px !important;
+      text-align: center;
+      border-bottom: 1px solid var(--global-divider-color);
+    }
+    .meio-wrapper th{
+      color: var(--global-2nd-color);
+    }
+    .meio-wrapper th:first-child, .meio-wrapper td:first-child {
+      text-align: left !important;
+    }
+    .meio-wrapper .meio-group-row td {
+      font-weight: bold;
+      background-color: var(--global-bg-color-2, rgba(0,0,0,0.03));
+      text-align: left !important;
+    }
+    .meio-wrapper input[type="number"] {
+      width: 65px !important;
+      max-width: 100% !important;
+      padding: 4px 6px !important;
+      text-align: center;
+      border: 1px solid var(--global-divider-color);
+      border-radius: 4px;
+      background: var(--global-bg-color);
+      color: var(--global-text-color);
+      box-sizing: border-box;
+    }
+    .meio-chart-container {
+      position: relative;
+      width: 100%;
+      height: 320px;
+      max-height: 400px;
+      margin-top: 1rem;
+    }
+  </style> <h1>Meiosis</h1> <div class="meio-btn-group"> <button type="button" id="meio-btn-preset" class="meio-btn">Load Human Germ Cell (2n = 46)</button> <button type="button" id="meio-btn-clear" class="meio-btn">Clear Table</button> <button type="button" id="meio-btn-save" class="meio-btn">📥 Save Chart Image</button> </div> <div style="overflow-x: auto;"> <table id="meio-table"> <thead> <tr> <th style="text-align:left;">Stage</th> <th># Chromosomes</th> <th># Chromatids</th> <th># Centromeres</th> <th># DNA Molecules</th> </tr> </thead> <tbody> <tr class="meio-group-row"> <td colspan="5" style="color: var(--global-3rd-color)">Interphase</td> </tr> <tr> <td class="meio-stage">G1</td> <td><input type="number" min="0" data-row="meio-g1" data-field="chrom"/></td> <td><input type="number" min="0" data-row="meio-g1" data-field="chromatid"/></td> <td><input type="number" min="0" data-row="meio-g1" data-field="centromere"/></td> <td><input type="number" min="0" data-row="meio-g1" data-field="dna"/></td> </tr> <tr> <td class="meio-stage">G2</td> <td><input type="number" min="0" data-row="meio-g2" data-field="chrom"/></td> <td><input type="number" min="0" data-row="meio-g2" data-field="chromatid"/></td> <td><input type="number" min="0" data-row="meio-g2" data-field="centromere"/></td> <td><input type="number" min="0" data-row="meio-g2" data-field="dna"/></td> </tr> <tr class="meio-group-row"> <td colspan="5" style="color: var(--global-3rd-color)">Meiosis I</td> </tr> <tr> <td class="meio-stage">Prophase I</td> <td><input type="number" min="0" data-row="meio-pro1" data-field="chrom"/></td> <td><input type="number" min="0" data-row="meio-pro1" data-field="chromatid"/></td> <td><input type="number" min="0" data-row="meio-pro1" data-field="centromere"/></td> <td><input type="number" min="0" data-row="meio-pro1" data-field="dna"/></td> </tr> <tr> <td class="meio-stage">Metaphase I</td> <td><input type="number" min="0" data-row="meio-meta1" data-field="chrom"/></td> <td><input type="number" min="0" data-row="meio-meta1" data-field="chromatid"/></td> <td><input type="number" min="0" data-row="meio-meta1" data-field="centromere"/></td> <td><input type="number" min="0" data-row="meio-meta1" data-field="dna"/></td> </tr> <tr> <td class="meio-stage">Anaphase I</td> <td><input type="number" min="0" data-row="meio-ana1" data-field="chrom"/></td> <td><input type="number" min="0" data-row="meio-ana1" data-field="chromatid"/></td> <td><input type="number" min="0" data-row="meio-ana1" data-field="centromere"/></td> <td><input type="number" min="0" data-row="meio-ana1" data-field="dna"/></td> </tr> <tr> <td class="meio-stage">Telophase I</td> <td><input type="number" min="0" data-row="meio-telo1" data-field="chrom"/></td> <td><input type="number" min="0" data-row="meio-telo1" data-field="chromatid"/></td> <td><input type="number" min="0" data-row="meio-telo1" data-field="centromere"/></td> <td><input type="number" min="0" data-row="meio-telo1" data-field="dna"/></td> </tr> <tr class="meio-group-row"> <td colspan="5" style="color: var(--global-3rd-color)">Meiosis II</td> </tr> <tr> <td class="meio-stage">Prophase II</td> <td><input type="number" min="0" data-row="meio-pro2" data-field="chrom"/></td> <td><input type="number" min="0" data-row="meio-pro2" data-field="chromatid"/></td> <td><input type="number" min="0" data-row="meio-pro2" data-field="centromere"/></td> <td><input type="number" min="0" data-row="meio-pro2" data-field="dna"/></td> </tr> <tr> <td class="meio-stage">Metaphase II</td> <td><input type="number" min="0" data-row="meio-meta2" data-field="chrom"/></td> <td><input type="number" min="0" data-row="meio-meta2" data-field="chromatid"/></td> <td><input type="number" min="0" data-row="meio-meta2" data-field="centromere"/></td> <td><input type="number" min="0" data-row="meio-meta2" data-field="dna"/></td> </tr> <tr> <td class="meio-stage">Anaphase II</td> <td><input type="number" min="0" data-row="meio-ana2" data-field="chrom"/></td> <td><input type="number" min="0" data-row="meio-ana2" data-field="chromatid"/></td> <td><input type="number" min="0" data-row="meio-ana2" data-field="centromere"/></td> <td><input type="number" min="0" data-row="meio-ana2" data-field="dna"/></td> </tr> <tr> <td class="meio-stage">Telophase II</td> <td><input type="number" min="0" data-row="meio-telo2" data-field="chrom"/></td> <td><input type="number" min="0" data-row="meio-telo2" data-field="chromatid"/></td> <td><input type="number" min="0" data-row="meio-telo2" data-field="centromere"/></td> <td><input type="number" min="0" data-row="meio-telo2" data-field="dna"/></td> </tr> <tr class="meio-group-row"> <td colspan="5" style="color: var(--global-3rd-color)">Post-Cytokinesis</td> </tr> <tr> <td class="meio-stage">Gamete</td> <td><input type="number" min="0" data-row="meio-gam" data-field="chrom"/></td> <td><input type="number" min="0" data-row="meio-gam" data-field="chromatid"/></td> <td><input type="number" min="0" data-row="meio-gam" data-field="centromere"/></td> <td><input type="number" min="0" data-row="meio-gam" data-field="dna"/></td> </tr> </tbody> </table> </div> <caption><h4 style="text-align: center">Genetic materials overtime in meiosis</h4></caption> <div class="meio-chart-container"> <canvas id="meioLineChart"></canvas> </div> <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const meioStages = [
+        "G1", "G2", "Prophase I", "Metaphase I", "Anaphase I", 
+        "Telophase I", "Prophase II", "Metaphase II", "Anaphase II", "Telophase II",
+        "Gamete"
+      ];
+      const meioRowKeys = [
+        "meio-g1", "meio-g2", "meio-pro1", "meio-meta1", "meio-ana1", 
+        "meio-telo1", "meio-pro2", "meio-meta2", "meio-ana2", "meio-telo2",
+        "meio-gam"
+      ];
+      
+      // Distinct properties for each metric to handle overlapping values visually
+      const meioFields = [
+        { key: "chrom", label: "Chromosomes", color: "#2563eb", dash: [5,7], pointStyle: 'circle', radius: 3 },
+        { key: "chromatid", label: "Chromatids", color: "#16a34a", dash: [6, 6], pointStyle: 'triangle', radius: 6 },
+        { key: "centromere", label: "Centromeres", color: "#d97706", dash: [2, 2], pointStyle: 'rectRot', radius: 6 },
+        { key: "dna", label: "DNA Molecules", color: "#dc2626", dash: [10, 4], pointStyle: 'rect', radius: 5 }
+      ];
+
+      // Human Meiosis standard layout tracking contents per cell lineage
+      const meioPresetValues = {
+        "meio-g1":    { chrom: 46, chromatid: 46, centromere: 46, dna: 46 },
+        "meio-g2":    { chrom: 46, chromatid: 92, centromere: 46, dna: 92 },
+        "meio-pro1":  { chrom: 46, chromatid: 92, centromere: 46, dna: 92 },
+        "meio-meta1": { chrom: 46, chromatid: 92, centromere: 46, dna: 92 },
+        "meio-ana1":  { chrom: 46, chromatid: 92, centromere: 46, dna: 92 },
+        "meio-telo1":  { chrom: 46, chromatid: 92, centromere: 46, dna: 92 },
+        "meio-pro2":  { chrom: 23, chromatid: 46, centromere: 23, dna: 46 },
+        "meio-meta2": { chrom: 23, chromatid: 46, centromere: 23, dna: 46 },
+        "meio-ana2":  { chrom: 46, chromatid: 46, centromere: 46, dna: 46 },
+        "meio-telo2":  { chrom: 46, chromatid: 46, centromere: 46, dna: 46 },
+        "meio-gam": { chrom: 23, chromatid: 23, centromere: 23, dna: 23 }
+      };
+
+      const meioCtx = document.getElementById("meioLineChart").getContext("2d");
+      
+      const meioDatasets = meioFields.map(f => ({
+        label: f.label,
+        data: new Array(meioRowKeys.length).fill(null),
+        borderColor: f.color,
+        backgroundColor: f.color,
+        borderWidth: 2.5,
+        borderDash: f.dash,
+        pointStyle: f.pointStyle,
+        pointRadius: f.radius,
+        pointHoverRadius: 8,
+        tension: 0.1,
+        fill: false
+      }));
+
+      const meioChart = new Chart(meioCtx, {
+        type: 'line',
+        data: { labels: meioStages, datasets: meioDatasets },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: {
+            mode: 'index',
+            intersect: false,
+          },
+          plugins: {
+            legend: {
+              position: 'top',
+              labels: {
+                usePointStyle: true,
+                boxWidth: 8
+              }
+            },
+            tooltip: {
+              enabled: true
+            },
+            annotation: {
+              annotations: {
+                dnaSynthesisLine: {
+                  type: 'line',
+                  xMin: 0.5,
+                  xMax: 0.5,
+                  borderColor: 'rgba(220, 38, 200, 0.5)',
+                  borderWidth: 2,
+                  borderDash: [4, 4],
+                  label: {
+                    display: true,
+                    content: 'DNA Synthesis',
+                    position: 'start',
+                    backgroundColor: 'rgba(220, 38, 200, 0.8)',
+                    font: { size: 10, weight: 'bold' },
+                    padding: 4
+                  }
+                },
+                cytokinesisLine1: {
+                  type: 'line',
+                  xMin: 5.5,
+                  xMax: 5.5,
+                  borderColor: 'rgba(220, 38, 200, 0.5)',
+                  borderWidth: 2,
+                  borderDash: [4, 4],
+                  label: {
+                    display: true,
+                    content: 'Cytokinesis I',
+                    position: 'start',
+                    backgroundColor: 'rgba(220, 38, 200, 0.8)',
+                    font: { size: 10, weight: 'bold' },
+                    padding: 4
+                  }
+                },
+                cytokinesisLine2: {
+                  type: 'line',
+                  xMin: 9.5,
+                  xMax: 9.5,
+                  borderColor: 'rgba(220, 38, 200, 0.5)',
+                  borderWidth: 2,
+                  borderDash: [4, 4],
+                  label: {
+                    display: true,
+                    content: 'Cytokinesis II',
+                    position: 'start',
+                    backgroundColor: 'rgba(220, 38, 200, 0.8)',
+                    font: { size: 10, weight: 'bold' },
+                    padding: 4
+                  }
+                }
+              }
+            }
+          },
+          scales: {
+            y: { 
+              beginAtZero: true, 
+              ticks: { precision: 0 },
+              grid: { color: 'rgba(0, 0, 0, 0.05)' }
+            },
+            x: {
+              grid: { display: false }
+            }
+          }
+        }
+      });
+
+      function updateMeioChartData() {
+        meioRowKeys.forEach((rowKey, rIndex) => {
+          meioFields.forEach((field, fIndex) => {
+            const input = document.querySelector(`.meio-wrapper input[data-row="${rowKey}"][data-field="${field.key}"]`);
+            const val = input && input.value !== "" ? parseFloat(input.value) : null;
+            meioChart.data.datasets[fIndex].data[rIndex] = val;
+          });
+        });
+        meioChart.update();
+      }
+
+      document.querySelectorAll('.meio-wrapper input[type="number"]').forEach(input => {
+        input.addEventListener('input', updateMeioChartData);
+      });
+
+      document.getElementById('meio-btn-preset').addEventListener('click', function() {
+        meioRowKeys.forEach(rowKey => {
+          meioFields.forEach(field => {
+            const input = document.querySelector(`.meio-wrapper input[data-row="${rowKey}"][data-field="${field.key}"]`);
+            if (input) {
+              input.value = meioPresetValues[rowKey][field.key];
+            }
+          });
+        });
+        updateMeioChartData();
+      });
+
+      document.getElementById('meio-btn-clear').addEventListener('click', function() {
+        document.querySelectorAll('.meio-wrapper input[type="number"]').forEach(input => {
+          input.value = '';
+        });
+        updateMeioChartData();
+      });
+
+      // Export Chart as Image feature
+      document.getElementById('meio-btn-save').addEventListener('click', function() {
+        const link = document.createElement('a');
+        link.download = 'meiosis-chromosome-chart.png';
+        link.href = meioChart.toBase64Image();
+        link.click();
+      });
+    });
+  </script> </div>]]></content><author><name></name></author><category term="bio202"/><category term="scicomm"/><summary type="html"><![CDATA[Practice visualizing the number of chromosomes and chromatids through stages of cell division.]]></summary></entry><entry><title type="html">On the Degrees of Freedom</title><link href="https://www.arepee.me/blog/2026/degrees_of_freedom/" rel="alternate" type="text/html" title="On the Degrees of Freedom"/><published>2026-09-14T00:00:00+00:00</published><updated>2026-09-14T00:00:00+00:00</updated><id>https://www.arepee.me/blog/2026/degrees_of_freedom</id><content type="html" xml:base="https://www.arepee.me/blog/2026/degrees_of_freedom/"><![CDATA[<h4 id="intution-for-degrees-of-freedom">Intution for Degrees of Freedom</h4> <p>In biostatistics, the concept of the <a href="https://en.wikipedia.org/wiki/Degrees_of_freedom_(statistics)">degrees of freedom (df)</a> comes up often and is frequently misunderstood, or at least only partially understood. As a student, you may resort to <em>memorization</em> on a case-by-case basis when df comes up in biology classes. Well, so did I. Notably, the equation is <code class="language-plaintext highlighter-rouge">df = N-1</code>, when <code class="language-plaintext highlighter-rouge">N</code> is the number of classes of data.</p> <p>To wrap your head around the idea of df, let’s imagine that you’re a coach for a soccer team. <i class="fa-solid fa-futbol"></i></p> <p>You have <code class="language-plaintext highlighter-rouge">11</code> players to fit <code class="language-plaintext highlighter-rouge">11</code> positions on the field. You may assign any player to any position you want, but once you’ve assigned <code class="language-plaintext highlighter-rouge">10</code> out of <code class="language-plaintext highlighter-rouge">11</code> players, you no longer have the choice to assign the last player as you desire. The player would have to play whichever the last position that’s left open. So, the number of degrees of freedom that you have is <code class="language-plaintext highlighter-rouge">11 - 1 = 10</code>. However, <em>picking the right <code class="language-plaintext highlighter-rouge">N</code> can be tricky</em>.</p> <p>Say, you’re interested in investigating the sources of daily caffeine—<code class="language-plaintext highlighter-rouge">coffee</code>, <code class="language-plaintext highlighter-rouge">tea</code>, <code class="language-plaintext highlighter-rouge">soda</code>, and <code class="language-plaintext highlighter-rouge">energy drinks</code>—for average Americans.</p> <div class="text-center"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/degrees_of_freedom/coffee-beans-480.webp 480w,/assets/img/degrees_of_freedom/coffee-beans-800.webp 800w,/assets/img/degrees_of_freedom/coffee-beans-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/degrees_of_freedom/coffee-beans.jpg" class="img-fluid rounded z-depth-1" width="auto" height="auto" style=" max-height: 250px; " loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"/> </picture> </figure> </div> <div class="caption"> What's your choice for caffeine? Or you may not need caffeine at all! </div> <p>However, your research collaborator gave your the data, they were tabulated with brand choices for soda as well. Knowing whether the soda brand choice was a Coca-Cola or Dr. Pepper isn’t more or less helpful for the question you’re investigating, which only concerns the types of the drinks. So, the relevant level of <em>freedom</em> for this particular question for this particular set of data is within the constraint of caffeine sources, and not brands. So, you may use the number of degrees of freedom to be <code class="language-plaintext highlighter-rouge">4 - 1 = 3</code>.</p> <p>The key takeaway is that <strong>the degrees of freedom depend on both the data AND the question</strong> that’s being asked. Same data but different question may have different degrees of freedom in your analysis.</p> <h4 id="lenticular-coin-flips-a-chi-square-case-study">Lenticular Coin Flips: a Chi-Square Case-Study</h4> <p>On your last birthday, your parent surprised you with an amazing present, a collectible <a href="https://en.wikipedia.org/wiki/Lenticular_printing">lenticular</a> coin you’d been asking for. It is special, because depending on the angle you’re looking at the coin, the engraving may appear as a <code class="language-plaintext highlighter-rouge">dragon</code> or a <code class="language-plaintext highlighter-rouge">monkey</code>.</p> <div class="row mt-3"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/degrees_of_freedom/dragon-head-480.webp 480w,/assets/img/degrees_of_freedom/dragon-head-800.webp 800w,/assets/img/degrees_of_freedom/dragon-head-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/degrees_of_freedom/dragon-head.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" style=" max-height: 200px; " loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"/> </picture> <figcaption class="caption">dragon heads</figcaption> </figure> </div> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/degrees_of_freedom/dragon-tail-480.webp 480w,/assets/img/degrees_of_freedom/dragon-tail-800.webp 800w,/assets/img/degrees_of_freedom/dragon-tail-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/degrees_of_freedom/dragon-tail.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" style=" max-height: 200px; " loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"/> </picture> <figcaption class="caption">dragon tails</figcaption> </figure> </div> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/degrees_of_freedom/monkey-head-480.webp 480w,/assets/img/degrees_of_freedom/monkey-head-800.webp 800w,/assets/img/degrees_of_freedom/monkey-head-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/degrees_of_freedom/monkey-head.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" style=" max-height: 200px; " loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"/> </picture> <figcaption class="caption">monkey heads</figcaption> </figure> </div> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/degrees_of_freedom/monkey-tail-480.webp 480w,/assets/img/degrees_of_freedom/monkey-tail-800.webp 800w,/assets/img/degrees_of_freedom/monkey-tail-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/degrees_of_freedom/monkey-tail.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" style=" max-height: 200px; " loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"/> </picture> <figcaption class="caption">monkey tails</figcaption> </figure> </div> </div> <p>Now, your friend had asked you to referee a soccer game, you need to coin flip to decide who gets the kickoff. Naturally, you’d like to use your newly minted dragon-monkey coin, but you aren’t sure if the coin was even <em>fair</em>.</p> <p>You set out to investigate if your gifted coin has the same chances of the coin landing <code class="language-plaintext highlighter-rouge">heads</code> as <code class="language-plaintext highlighter-rouge">tails</code> by tossing the coin <code class="language-plaintext highlighter-rouge">1000</code> times and conducting a Chi-square test. You write down all your observations. The coin still has <code class="language-plaintext highlighter-rouge">heads</code> and <code class="language-plaintext highlighter-rouge">tails</code> like any other coin; however, because the orientation in which the coin lands is random, when it lands a <code class="language-plaintext highlighter-rouge">heads</code>, about <em>50%</em> of the times you’d see a head of a <code class="language-plaintext highlighter-rouge">dragon</code>. The other <em>50%</em> of the times, you’d see a head of a <code class="language-plaintext highlighter-rouge">monkey</code>. The <code class="language-plaintext highlighter-rouge">heads</code> and <code class="language-plaintext highlighter-rouge">tails</code> results are independently of whether you’re looking at a <code class="language-plaintext highlighter-rouge">dragon</code> or a <code class="language-plaintext highlighter-rouge">monkey</code>.</p> <p><br/></p> <div class="row mt-3"> <table> <thead> <tr> <th align="left">coin toss results</th> <th align="right">count</th> </tr> </thead> <tbody> <tr> <td valign="middle"> <img src="/assets/img/degrees_of_freedom/dragon-head.png" width="50" style="vertical-align: middle;"/> dragon heads </td> <td valign="middle">119</td> </tr> <tr> <td valign="middle"> <img src="/assets/img/degrees_of_freedom/dragon-tail.png" width="50" style="vertical-align: middle;"/> dragon tails </td> <td valign="middle">370</td> </tr> <tr> <td valign="middle"> <img src="/assets/img/degrees_of_freedom/monkey-head.png" width="50" style="vertical-align: middle;"/> monkey heads </td> <td valign="middle">135</td> </tr> <tr> <td valign="middle"> <img src="/assets/img/degrees_of_freedom/monkey-tail.png" width="50" style="vertical-align: middle;"/> monkey tails </td> <td valign="middle">376</td> </tr> </tbody> <caption style="caption-side:bottom">1000 coin toss results</caption> </table> </div> <p><br/></p> <p>You finally have all the information you need to conduct a Chi-square test of your own. However, you remember that you’re only testing to see if this coin is <em>fair</em>, which has nothing to do with whether you’re observing a <code class="language-plaintext highlighter-rouge">dragon</code> or a <code class="language-plaintext highlighter-rouge">monkey</code> engraving. Therefore, whether you see a <code class="language-plaintext highlighter-rouge">dragon</code> or a <code class="language-plaintext highlighter-rouge">monkey</code> head engraving, you can lump both of them together as the times that the coin lands <code class="language-plaintext highlighter-rouge">heads</code>. Same for <code class="language-plaintext highlighter-rouge">tails</code>.</p> <p><br/></p> <div class="row mt-3"> <table> <thead> <tr> <th>coin flip results</th> <th>counts</th> </tr> </thead> <tbody> <tr> <td>combined heads</td> <td>119 + 135 = 254</td> </tr> <tr> <td>combined tails</td> <td>370 + 376 = 746</td> </tr> <tr> <td>total</td> <td>254 + 746 = 1000</td> </tr> </tbody> <caption style="caption-side:bottom">1000 coin toss combined results</caption> </table> </div> <p><br/></p> <p>It’s probably quite obvious now that the coin is <em>NOT fair</em>, but you calculate the Chi-square test nonetheless.</p> <p><br/></p> <div class="row mt-3"> <table> <thead> <tr> <th>classes</th> <th>observed</th> <th>expected</th> <th>$(O-E)$</th> <th>$(O-E)^2$</th> <th>$\frac{(O-E)^2}{E}$</th> </tr> </thead> <tbody> <tr> <td>heads</td> <td>254</td> <td>500</td> <td>254 - 500 = -246</td> <td>60516</td> <td>121.03</td> </tr> <tr> <td>tails</td> <td>746</td> <td>500</td> <td>746 - 500 = 246</td> <td>60516</td> <td>121.03</td> </tr> </tbody> <caption style="caption-side:bottom">Chi-square calculation</caption> </table> </div> <p><br/></p> <p>Therefore, our Chi-square value is <code class="language-plaintext highlighter-rouge">242.06</code>! And what should the degrees of freedom be? Since there are only two classes, <code class="language-plaintext highlighter-rouge">heads</code> or <code class="language-plaintext highlighter-rouge">tails</code>, the degrees of freedom is <code class="language-plaintext highlighter-rouge">2 - 1 = 1</code>! At <code class="language-plaintext highlighter-rouge">p = 0.05</code>, the Chi-square threshold is <code class="language-plaintext highlighter-rouge">3.841</code>.</p> <p>Our calculated Chi-square value for this coin is <em>WAY HIGHER</em> than the threshold. So we can <em>reject</em> our null hypothesis that this coin is <em>fair</em>!! It looks like you’re going to have to bring another coin to your friend’s soccer game.</p> <p><em>Can you spot the connection between this example and testing for independent assortment using a test cross?</em></p> <h4 id="testcross-application">Testcross Application</h4> <p>In a sexually-reproducing, diploid organism, let’s set up a testcross for <code class="language-plaintext highlighter-rouge">1000</code> offspring (see diagram below) and to test for <code class="language-plaintext highlighter-rouge">independent assortment</code>—<em>meaning the chances that a meiotic gamete receives <code class="language-plaintext highlighter-rouge">parental</code> vs <code class="language-plaintext highlighter-rouge">recombinant</code> pairs of A and B allele are equal</em>.</p> <div class="text-center"> <script type="text/tikz">
     \begin{tikzpicture}[font=\sffamily\bfseries]
 
       \node (P) at (0, 1) {P};
