@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/rpornmon/rp-folio-core.git
-  revision: 35e53566827dda52b7f99a514489056c3956a80b
+  revision: 0c1b9c90cfdd888bc50dc28bcc940cb708bd046c
   branch: main
   specs:
     al_folio_core (1.0.15)

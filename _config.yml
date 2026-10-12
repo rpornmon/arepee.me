@@ -249,7 +249,6 @@ kramdown:
 include: ["_pages"]
 exclude:
   - _pages/about_einstein.md
-  - _pages/gallery.md
   - _pages/projects.md
   - _pages/plugins.md
   - _pages/publications.md
